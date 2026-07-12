@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China · June 2027 — The Wagner Family Expedition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1E5; --paper2:#F0E7D3; --ink:#2B2320; --ink2:#5A4F47;
+    --verm:#C13B2A; --deepred:#8E2418; --gold:#C99A3C; --jade:#2E6E62; --sky:#B8D4D0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;line-height:1.6}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif}
+  .zh{font-family:'Noto Serif SC',serif}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,241,229,.94);backdrop-filter:blur(6px);border-bottom:1px solid #E2D6BC}
+  nav .wrap{display:flex;align-items:center;gap:20px;height:56px}
+  nav .mark{font-family:'Noto Serif SC',serif;font-weight:900;color:var(--verm);font-size:1.25rem;letter-spacing:.1em}
+  nav a{color:var(--ink2);text-decoration:none;font-size:.86rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 2px;border-bottom:2px solid transparent}
+  nav a:hover,nav a.active{color:var(--verm);border-bottom-color:var(--verm)}
+  nav .links{display:flex;gap:16px;flex-wrap:wrap;overflow-x:auto}
+
+  /* ---- hero ---- */
+  header{position:relative;overflow:hidden}
+  header svg{display:block;width:100%;height:auto}
+  .hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px}
+  .hero-text .kicker{font-weight:700;letter-spacing:.35em;text-transform:uppercase;font-size:.8rem;color:var(--deepred)}
+  .hero-text h1{font-size:clamp(2.2rem,7vw,4.6rem);font-weight:900;color:var(--ink);line-height:1.05;margin:.2em 0}
+  .hero-text .sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:var(--ink2);font-weight:600;max-width:560px}
+  .hero-badges{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:center}
+  .badge{background:var(--verm);color:#fff;font-weight:700;font-size:.8rem;padding:5px 14px;border-radius:999px;letter-spacing:.03em}
+  .badge.alt{background:var(--jade)}
+  .badge.gold{background:var(--gold);color:var(--ink)}
+
+  /* ---- sections ---- */
+  section{padding:64px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+  .sec-head .zh{color:var(--gold);font-size:1.5rem;font-weight:900}
+  .sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:700}
+  .lede{font-size:1.08rem;max-width:780px;color:var(--ink)}
+  .lede + .lede{margin-top:14px}
+  .muted{color:var(--ink2)}
+  .rule{height:3px;width:64px;background:var(--verm);border-radius:2px;margin:10px 0 26px}
+
+  /* ---- why june cards ---- */
+  .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:26px}
+  .card{background:#fff;border:1px solid #E7DCC4;border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px rgba(43,35,32,.06)}
+  .card h3{font-size:1.05rem;margin-bottom:8px;color:var(--deepred)}
+  .card p{font-size:.94rem;color:var(--ink2)}
+  .card .big{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--ink);font-weight:700;display:block;margin-bottom:4px}
+
+  /* ---- route map ---- */
+  .mapbox{background:linear-gradient(180deg,#F3ECDB, #EDE2C9);border:1px solid #E2D6BC;border-radius:18px;padding:10px 10px 4px;box-shadow:0 2px 8px rgba(43,35,32,.07)}
+  .mapbox svg{width:100%;height:auto;display:block}
+  .maplegend{display:flex;gap:22px;flex-wrap:wrap;padding:10px 14px 14px;font-size:.85rem;color:var(--ink2);font-weight:600}
+  .maplegend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{display:inline-block;width:26px;height:0;border-top:3px solid var(--verm);border-radius:2px}
+  .sw.dash{border-top-style:dashed;border-top-color:var(--jade)}
+  .sw.fly{border-top-style:dotted;border-top-color:var(--gold);border-top-width:4px}
+  .citynode{cursor:default}
+  .citynode circle{transition:r .15s}
+  .citynode:hover circle.dot{r:11}
+
+  /* ---- city blocks ---- */
+  .city{margin-top:44px;background:#fff;border:1px solid #E7DCC4;border-radius:20px;overflow:hidden;box-shadow:0 2px 10px rgba(43,35,32,.07)}
+  .city-banner{position:relative}
+  .city-banner svg{display:block;width:100%;height:auto}
+  .city-title{position:absolute;left:26px;bottom:16px;display:flex;align-items:baseline;gap:14px;text-shadow:0 1px 0 rgba(247,241,229,.5)}
+  .city-title .zh{font-size:2rem;font-weight:900;color:var(--deepred)}
+  .city-title h3{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:900;color:var(--ink)}
+  .city-days{position:absolute;right:20px;top:16px;background:var(--ink);color:var(--paper);font-weight:700;font-size:.85rem;padding:6px 14px;border-radius:999px;letter-spacing:.05em}
+  .city-body{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;padding:26px}
+  @media(max-width:800px){.city-body{grid-template-columns:1fr}}
+  .day{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #E7DCC4}
+  .day:last-child{border-bottom:none}
+  .day .dnum{flex:0 0 46px;height:46px;border-radius:12px;background:var(--paper2);color:var(--deepred);font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;display:flex;align-items:center;justify-content:center}
+  .day h4{font-size:1rem;margin-bottom:2px}
+  .day p{font-size:.92rem;color:var(--ink2)}
+  .citymap{background:var(--paper);border:1px solid #EADFC7;border-radius:14px;padding:12px}
+  .citymap svg{width:100%;height:auto;display:block}
+  .citymap .cap{font-size:.75rem;color:var(--ink2);text-align:center;margin-top:6px;font-style:italic}
+  .foodnote{margin-top:14px;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.9rem;color:var(--ink2)}
+  .foodnote b{color:var(--ink)}
+
+  /* ---- extensions ---- */
+  .ext-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+  @media(max-width:760px){.ext-grid{grid-template-columns:1fr}}
+  .ext{background:#fff;border:1px solid #E7DCC4;border-radius:18px;overflow:hidden;box-shadow:0 2px 8px rgba(43,35,32,.06)}
+  .ext svg{display:block;width:100%;height:auto}
+  .ext .pad{padding:20px 22px}
+  .ext h3{font-size:1.2rem;margin-bottom:6px}
+  .ext p{font-size:.94rem;color:var(--ink2)}
+  .ext .tagline{color:var(--verm);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+
+  /* ---- tour + logistics ---- */
+  .tourbox{background:linear-gradient(135deg,#8E2418,#C13B2A);color:#F9EFE2;border-radius:20px;padding:36px 34px;margin-top:8px}
+  .tourbox h3{font-size:1.5rem;margin-bottom:12px;color:#fff}
+  .tourbox p{max-width:820px;font-size:1rem}
+  .tourbox p + p{margin-top:12px}
+  .tourbox .inc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:20px}
+  .tourbox .inc div{background:rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;font-size:.9rem;font-weight:600}
+  .tourbox a{color:#FFD9A0}
+  .logi{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:26px}
+  .logi .card h3{display:flex;align-items:center;gap:8px;color:var(--ink)}
+  .logi .card h3 .ic{color:var(--verm);font-size:1.1rem}
+
+  /* ---- timeline ---- */
+  .tl{margin-top:26px;border-left:3px solid var(--gold);padding-left:26px}
+  .tl-item{position:relative;padding-bottom:22px}
+  .tl-item::before{content:"";position:absolute;left:-33px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--verm);border:3px solid var(--paper)}
+  .tl-item .when{font-weight:700;color:var(--deepred);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+  .tl-item .what{font-size:.97rem;color:var(--ink2)}
+
+  footer{border-top:1px solid #E2D6BC;padding:32px 0 48px;margin-top:40px;font-size:.85rem;color:var(--ink2)}
+  footer .zh{color:var(--gold)}
+
+  @media print{
+    nav,.maplegend{display:none}
+    section{padding:24px 0;break-inside:avoid}
+    .city{break-inside:avoid;box-shadow:none}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="mark zh">中国</span>
+    <div class="links">
+      <a href="#idea">The Plan</a>
+      <a href="#june">Why June</a>
+      <a href="#route">Route</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#extensions">Extensions</a>
+      <a href="#tour">How It Works</a>
+      <a href="#logistics">Logistics</a>
+      <a href="#prep">Countdown</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header>
+  <svg viewBox="0 0 1440 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the Great Wall winding over mountains at sunrise">
+    <defs>
+      <linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F7E8C9"/><stop offset=".55" stop-color="#F3D9AE"/><stop offset="1" stop-color="#EBC494"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="620" fill="url(#skyg)"/>
+    <circle cx="1080" cy="150" r="92" fill="#D9542B" opacity=".88"/>
+    <circle cx="1080" cy="150" r="112" fill="none" stroke="#D9542B" stroke-width="2" opacity=".35"/>
+    <!-- clouds -->
+    <g fill="#F9F1DF" opacity=".85">
+      <ellipse cx="260" cy="120" rx="110" ry="18"/><ellipse cx="330" cy="103" rx="70" ry="13"/>
+      <ellipse cx="880" cy="80" rx="90" ry="14"/><ellipse cx="1260" cy="260" rx="100" ry="15"/>
+    </g>
+    <!-- birds -->
+    <g stroke="#6B4A35" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M420 170 q10 -12 20 0 q10 -12 20 0"/>
+      <path d="M480 145 q8 -10 16 0 q8 -10 16 0"/>
+      <path d="M530 185 q7 -9 14 0 q7 -9 14 0"/>
+    </g>
+    <!-- far mountains -->
+    <path d="M0 430 L120 330 L230 420 L340 300 L470 425 L590 320 L720 430 L850 310 L980 425 L1120 330 L1260 430 L1370 350 L1440 410 L1440 620 L0 620 Z" fill="#C99A6B" opacity=".55"/>
+    <!-- mid mountains -->
+    <path d="M0 480 L150 370 L290 470 L430 350 L560 470 L700 365 L860 480 L1010 370 L1160 475 L1300 385 L1440 470 L1440 620 L0 620 Z" fill="#A96F45" opacity=".75"/>
+    <!-- wall ridge mountains -->
+    <path d="M0 545 L180 430 L340 530 L520 415 L690 535 L880 430 L1060 540 L1240 440 L1440 535 L1440 620 L0 620 Z" fill="#7C4A2D"/>
+    <!-- the wall: path along ridge -->
+    <path d="M0 542 L180 428 L340 528 L520 413 L690 533 L880 428 L1060 538 L1240 438 L1440 532" fill="none" stroke="#F2E3C2" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M0 542 L180 428 L340 528 L520 413 L690 533 L880 428 L1060 538 L1240 438 L1440 532" fill="none" stroke="#5C331C" stroke-width="4" stroke-dasharray="10 8" stroke-linejoin="round"/>
+    <!-- watchtowers -->
+    <g fill="#F2E3C2" stroke="#5C331C" stroke-width="3">
+      <rect x="162" y="396" width="38" height="42" rx="3"/><rect x="156" y="388" width="50" height="12" rx="3"/>
+      <rect x="502" y="381" width="38" height="42" rx="3"/><rect x="496" y="373" width="50" height="12" rx="3"/>
+      <rect x="862" y="396" width="38" height="42" rx="3"/><rect x="856" y="388" width="50" height="12" rx="3"/>
+      <rect x="1222" y="406" width="38" height="42" rx="3"/><rect x="1216" y="398" width="50" height="12" rx="3"/>
+    </g>
+  </svg>
+  <div class="hero-text">
+    <span class="kicker">A Wagner Family Expedition</span>
+    <h1>CHINA · JUNE 2027</h1>
+    <p class="sub">Beijing → Xi'an → Nanjing → Suzhou → Shanghai.<br>Two weeks, three ancient capitals, one very fast train.</p>
+    <div class="hero-badges">
+      <span class="badge">≈ 15 days together</span>
+      <span class="badge alt">6–8 adults + Florence</span>
+      <span class="badge gold">Private guides, our own pace</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE IDEA ============ -->
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">概念</span><h2>The idea</h2></div>
+    <div class="rule"></div>
+    <p class="lede">The classic "Golden Triangle" route through China's three great capitals — imperial <b>Beijing</b>, ancient <b>Xi'an</b>, and hyper-modern <b>Shanghai</b> — stitched together by 200-mph high-speed rail, with stops in <b>Nanjing</b> (the Republic-era capital) and <b>Suzhou</b> (canal city of classical gardens) along the way. It's five thousand years of history on one train line, ending in the skyline of the future.</p>
+    <p class="lede">We'd travel as a <b>private group with our own guides</b> — a specialist agency books the hotels, trains, tickets, and a local English-speaking guide + van in each city, but there are no strangers and no forced march: it's our family, our pace, with toddler naps built into the schedule. Think Backroads-level handholding, except the tour is just us. (Details in <a href="#tour">How It Works</a>.)</p>
+    <p class="lede">After the shared two weeks, the trip branches — some fly home from Shanghai, while <b>Jackson, Tandena &amp; Florence</b> may add a week in Hangzhou and the lake country, and <b>Warren &amp; Margot</b> may hop a flight west to Chengdu for pandas and Sichuan food. (See <a href="#extensions">Extensions</a>.)</p>
+  </div>
+</section>
+
+<!-- ============ WHY JUNE ============ -->
+<section id="june" style="background:var(--paper2);border-top:1px solid #E7DCC4;border-bottom:1px solid #E7DCC4">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">六月</span><h2>Why June?</h2></div>
+    <div class="rule"></div>
+    <p class="lede">School calendars rule out spring — so the real question is <i>which part</i> of summer. The answer is decisively <b>early-to-mid June</b>, before China's own summer kicks off:</p>
+    <div class="cards3">
+      <div class="card"><span class="big">Crowds</span><h3>Chinese schools break July 1</h3><p>The moment they do, every big sight in the country goes from busy to mobbed and hotel prices jump 20–50%. June is the last calm month at the Forbidden City and the Terracotta Army.</p></div>
+      <div class="card"><span class="big">Weather</span><h3>July–August is brutal</h3><p>July is Beijing's rainiest month; Xi'an bakes at 95–105°F in high summer; Shanghai's typhoon season arrives in August. June is merely hot — very manageable with early mornings and long lunches.</p></div>
+      <div class="card"><span class="big">Wildcard</span><h3>The PLA turns 100 on Aug 1, 2027</h3><p>A massive military parade is widely expected in Beijing — which for visitors means weeks of rehearsal lockdowns and closed sights in late July/early August. June keeps us well clear of it.</p></div>
+    </div>
+    <p class="lede muted" style="margin-top:22px;font-size:.95rem">The one June trade-off: the Shanghai region can see "plum rain" drizzle late in the month — which is why the route ends there, with museums, gardens, and food halls as ready-made rain plans.</p>
+  </div>
+</section>
+
+<!-- ============ ROUTE MAP ============ -->
+<section id="route">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">路线</span><h2>The route</h2></div>
+    <div class="rule"></div>
+    <p class="lede" style="margin-bottom:22px">Fly into Beijing, home from Shanghai — no backtracking. Every hop in between is a high-speed train: city center to city center, no airport security theater, and watching eastern China blur past at 200&nbsp;mph is itself one of the sights.</p>
+    <div class="mapbox">
+      <svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic map of the route from Beijing to Xi'an, Nanjing, Suzhou and Shanghai, with extensions to Hangzhou and Chengdu">
+        <!-- sea -->
+        <path d="M700 0 C 660 90, 600 120, 640 170 C 690 230, 800 190, 800 250 C 800 320, 700 330, 720 390 C 740 450, 810 450, 800 500 C 790 545, 740 540, 750 590 L 760 640 L 900 640 L 900 0 Z" fill="#CFE0DC"/>
+        <path d="M700 0 C 660 90, 600 120, 640 170 C 690 230, 800 190, 800 250 C 800 320, 700 330, 720 390 C 740 450, 810 450, 800 500 C 790 545, 740 540, 750 590 L 760 640" fill="none" stroke="#8FB5AE" stroke-width="3"/>
+        <text x="810" y="330" font-size="15" fill="#5E8781" font-style="italic" font-family="Georgia,serif">Yellow Sea</text>
+        <!-- yangtze -->
+        <path d="M0 520 C 90 500, 120 510, 190 515 C 300 522, 380 545, 470 505 C 560 468, 620 455, 677 436 C 720 422, 760 455, 788 478" fill="none" stroke="#9CC0BA" stroke-width="7" opacity=".8" stroke-linecap="round"/>
+        <text x="330" y="548" font-size="13" fill="#5E8781" font-style="italic" font-family="Georgia,serif">Yangtze River</text>
+        <!-- great wall hint -->
+        <path d="M470 60 Q 540 40 590 62 Q 650 88 700 68" fill="none" stroke="#B08968" stroke-width="4" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <text x="470" y="44" font-size="12" fill="#8A6B4F" font-style="italic" font-family="Georgia,serif">Great Wall country</text>
+
+        <!-- main HSR legs -->
+        <g fill="none" stroke="#C13B2A" stroke-width="5" stroke-linecap="round">
+          <path d="M590 100 C 500 170, 400 260, 322 332"/>
+          <path d="M330 345 C 450 420, 560 430, 668 436"/>
+          <path d="M684 440 L 728 458"/>
+          <path d="M742 466 L 776 476"/>
+        </g>
+        <!-- extension legs -->
+        <path d="M780 488 C 765 505, 748 512, 734 515" fill="none" stroke="#2E6E62" stroke-width="4" stroke-dasharray="9 7" stroke-linecap="round"/>
+        <path d="M770 480 C 600 560, 340 560, 165 502" fill="none" stroke="#C99A3C" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/>
+
+        <!-- leg labels -->
+        <g font-family="'Source Sans 3',sans-serif" font-weight="700" font-size="14">
+          <g><rect x="398" y="196" rx="10" width="92" height="24" fill="#fff" stroke="#E0CFA9"/><text x="444" y="213" text-anchor="middle" fill="#8E2418">HSR · 4½ h</text></g>
+          <g><rect x="452" y="398" rx="10" width="82" height="24" fill="#fff" stroke="#E0CFA9"/><text x="493" y="415" text-anchor="middle" fill="#8E2418">HSR · 5 h</text></g>
+          <g><rect x="668" y="398" rx="10" width="70" height="24" fill="#fff" stroke="#E0CFA9"/><text x="703" y="415" text-anchor="middle" fill="#8E2418">1 h</text></g>
+          <g><rect x="742" y="428" rx="10" width="70" height="24" fill="#fff" stroke="#E0CFA9"/><text x="777" y="445" text-anchor="middle" fill="#8E2418">25 min</text></g>
+          <g><rect x="700" y="524" rx="10" width="86" height="24" fill="#fff" stroke="#BFD5CF"/><text x="743" y="541" text-anchor="middle" fill="#2E6E62">HSR · 1 h</text></g>
+          <g><rect x="380" y="572" rx="10" width="118" height="24" fill="#fff" stroke="#E4D3AC"/><text x="439" y="589" text-anchor="middle" fill="#9C7420">✈ 3½ h flight</text></g>
+        </g>
+
+        <!-- arrival / departure planes -->
+        <text x="620" y="70" font-size="22" fill="#8E2418">✈</text>
+        <text x="640" y="90" font-size="12" fill="#8E2418" font-weight="700" font-family="'Source Sans 3',sans-serif">arrive PEK</text>
+        <text x="822" y="462" font-size="22" fill="#8E2418">✈</text>
+        <text x="808" y="440" font-size="12" fill="#8E2418" font-weight="700" font-family="'Source Sans 3',sans-serif">home from PVG</text>
+
+        <!-- city nodes -->
+        <g font-family="'Source Sans 3',sans-serif">
+          <g class="citynode"><title>Beijing — Days 1–6 · Forbidden City, Great Wall, Temple of Heaven</title>
+            <circle class="dot" cx="590" cy="96" r="9" fill="#C13B2A" stroke="#fff" stroke-width="3"/>
+            <text x="565" y="130" font-size="19" font-weight="900" fill="#2B2320" font-family="'Playfair Display',serif">Beijing</text>
+            <text x="565" y="147" font-size="12.5" font-weight="700" fill="#8E2418">DAYS 1–6</text>
+          </g>
+          <g class="citynode"><title>Xi'an — Days 6–10 · Terracotta Army, city walls, Muslim Quarter</title>
+            <circle class="dot" cx="322" cy="339" r="9" fill="#C13B2A" stroke="#fff" stroke-width="3"/>
+            <text x="252" y="345" font-size="19" font-weight="900" fill="#2B2320" font-family="'Playfair Display',serif">Xi'an</text>
+            <text x="252" y="362" font-size="12.5" font-weight="700" fill="#8E2418">DAYS 6–10</text>
+          </g>
+          <g class="citynode"><title>Nanjing — Days 10–12 · Sun Yat-sen Mausoleum, Presidential Palace</title>
+            <circle class="dot" cx="677" cy="436" r="9" fill="#C13B2A" stroke="#fff" stroke-width="3"/>
+            <text x="618" y="470" font-size="19" font-weight="900" fill="#2B2320" font-family="'Playfair Display',serif">Nanjing</text>
+            <text x="618" y="487" font-size="12.5" font-weight="700" fill="#8E2418">DAYS 10–12</text>
+          </g>
+          <g class="citynode"><title>Suzhou — Days 12–13 · classical gardens, canals</title>
+            <circle class="dot" cx="735" cy="462" r="8" fill="#C13B2A" stroke="#fff" stroke-width="3"/>
+            <text x="672" y="416" font-size="17" font-weight="900" fill="#2B2320" font-family="'Playfair Display',serif">Suzhou</text>
+            <text x="700" y="400" font-size="12.5" font-weight="700" fill="#8E2418">D 12–13</text>
+          </g>
+          <g class="citynode"><title>Shanghai — Days 13–16 · the Bund, Yu Garden, Shanghai Tower</title>
+            <circle class="dot" cx="785" cy="480" r="9" fill="#C13B2A" stroke="#fff" stroke-width="3"/>
+            <text x="800" y="505" font-size="19" font-weight="900" fill="#2B2320" font-family="'Playfair Display',serif" text-anchor="start">Shanghai</text>
+            <text x="800" y="522" font-size="12.5" font-weight="700" fill="#8E2418">DAYS 13–16</text>
+          </g>
+          <g class="citynode"><title>Hangzhou — optional week 3 · West Lake, Song dynasty sites, tea country</title>
+            <circle class="dot" cx="730" cy="516" r="7" fill="#2E6E62" stroke="#fff" stroke-width="3"/>
+            <text x="600" y="522" font-size="16" font-weight="900" fill="#2E6E62" font-family="'Playfair Display',serif">Hangzhou</text>
+            <text x="600" y="538" font-size="11.5" font-weight="700" fill="#2E6E62">WEEK 3 · OPTION</text>
+          </g>
+          <g class="citynode"><title>Chengdu — Warren &amp; Margot's week 3 · pandas, Sichuan food, Sanxingdui</title>
+            <circle class="dot" cx="158" cy="498" r="7" fill="#C99A3C" stroke="#fff" stroke-width="3"/>
+            <text x="110" y="480" font-size="16" font-weight="900" fill="#9C7420" font-family="'Playfair Display',serif">Chengdu</text>
+            <text x="110" y="463" font-size="11.5" font-weight="700" fill="#9C7420">WEEK 3 · OPTION</text>
+          </g>
+        </g>
+      </svg>
+      <div class="maplegend">
+        <span><span class="sw"></span> shared route (high-speed rail)</span>
+        <span><span class="sw dash"></span> Hangzhou extension</span>
+        <span><span class="sw fly"></span> Chengdu extension (flight)</span>
+        <span style="font-style:italic">schematic — not to scale</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ITINERARY ============ -->
+<section id="itinerary" style="padding-top:48px">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">行程</span><h2>The itinerary</h2></div>
+    <div class="rule"></div>
+    <p class="lede">The daily rhythm, built around June heat and one three-year-old: <b>one anchor sight at morning opening → long air-conditioned lunch &amp; nap → back out for the evening</b>, which is when Chinese cities are at their best anyway. Guides handle every ticket, van, and restaurant booking; nobody herds us.</p>
+
+    <!-- ======== BEIJING ======== -->
+    <div class="city">
+      <div class="city-banner">
+        <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the Temple of Heaven and a palace gate">
+          <rect width="1000" height="230" fill="#F3DFB9"/>
+          <circle cx="140" cy="70" r="45" fill="#D9542B" opacity=".8"/>
+          <g stroke="#6B4A35" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M250 60 q8 -10 16 0 q8 -10 16 0"/><path d="M300 45 q7 -8 14 0 q7 -8 14 0"/>
+          </g>
+          <!-- kite -->
+          <g><path d="M840 45 l22 30 l-22 30 l-22 -30 Z" fill="#C13B2A" stroke="#8E2418" stroke-width="2"/><path d="M840 105 q-10 25 8 45 q-14 18 4 38" stroke="#8E2418" stroke-width="2" fill="none"/></g>
+          <!-- ground -->
+          <rect y="196" width="1000" height="34" fill="#B98B54"/>
+          <!-- Temple of Heaven -->
+          <g transform="translate(430,26)">
+            <rect x="52" y="150" width="56" height="20" fill="#F2E3C2" stroke="#8E2418" stroke-width="3"/>
+            <path d="M20 150 L140 150 L120 128 L40 128 Z" fill="#2E6E62" stroke="#1E4A42" stroke-width="3"/>
+            <rect x="52" y="106" width="56" height="22" fill="#C13B2A" stroke="#8E2418" stroke-width="3"/>
+            <path d="M34 106 L126 106 L110 84 L50 84 Z" fill="#2E6E62" stroke="#1E4A42" stroke-width="3"/>
+            <rect x="62" y="64" width="36" height="20" fill="#C13B2A" stroke="#8E2418" stroke-width="3"/>
+            <path d="M50 64 L110 64 L92 40 L68 40 Z" fill="#2E6E62" stroke="#1E4A42" stroke-width="3"/>
+            <circle cx="80" cy="34" r="7" fill="#C99A3C" stroke="#8E2418" stroke-width="2"/>
+            <rect x="6" y="170" width="148" height="12" fill="#E8D6AE" stroke="#B98B54" stroke-width="2"/>
+          </g>
+          <!-- palace gate -->
+          <g transform="translate(640,90)">
+            <rect x="0" y="72" width="260" height="34" fill="#B03A2E" stroke="#8E2418" stroke-width="3"/>
+            <rect x="40" y="34" width="180" height="38" fill="#C13B2A" stroke="#8E2418" stroke-width="3"/>
+            <path d="M18 34 L242 34 C 220 12, 40 12, 18 34 Z" fill="#C99A3C" stroke="#8E2418" stroke-width="3"/>
+            <path d="M50 12 C 90 -4, 170 -4, 210 12 L 196 12 C 165 2, 95 2, 64 12 Z" fill="#C99A3C" stroke="#8E2418" stroke-width="2"/>
+            <rect x="118" y="80" width="26" height="26" rx="12" fill="#5C2317"/>
+            <rect x="58" y="80" width="20" height="26" rx="9" fill="#5C2317"/><rect x="184" y="80" width="20" height="26" rx="9" fill="#5C2317"/>
+          </g>
+        </svg>
+        <div class="city-title"><span class="zh">北京</span><h3>Beijing</h3></div>
+        <span class="city-days">DAYS 1–6</span>
+      </div>
+      <div class="city-body">
+        <div>
+          <div class="day"><div class="dnum">1</div><div><h4>Arrive &amp; land softly</h4><p>Fly into Beijing, meet our guide, settle into the apartments. A gentle stroll through the hutongs (lane neighborhoods) and an early dinner. Jet lag with a toddler: plan nothing, win the day.</p></div></div>
+          <div class="day"><div class="dnum">2</div><div><h4>Tiananmen &amp; the Forbidden City</h4><p>The world's largest palace complex, walked south-to-north at opening before the heat — then straight up Jingshan hill for the postcard view over its golden roofs. Evening: Peking duck, carved tableside.</p></div></div>
+          <div class="day"><div class="dnum">3</div><div><h4>The Great Wall at Mutianyu</h4><p>Private vans at 7am to the most family-friendly stretch: an enclosed gondola glides everyone (Florence included) up to the towers, and the wall ripples along the ridgelines to the horizon. Evening option: the famous Chaoyang acrobatics show.</p></div></div>
+          <div class="day"><div class="dnum">4</div><div><h4>Temple of Heaven &amp; the Summer Palace</h4><p>7am in Temple of Heaven park is the best free show in China — tai chi, ballroom dancers, choirs — before touring the great round altar itself. Afternoon: boat across Kunming Lake at the emperors' Summer Palace.</p></div></div>
+          <div class="day"><div class="dnum">5</div><div><h4>Choose-your-own Beijing</h4><p>The group splits: 798 Art District or the Military Museum's tanks-and-jets halls for some; Beihai Park pedal-boats and the hands-on Science &amp; Technology Museum for the Florence contingent. Reunite for a hutong food tour at dusk.</p></div></div>
+          <div class="day"><div class="dnum">6</div><div><h4>The bullet train west</h4><p>Board the 200-mph G-train at Beijing West — 700 miles to Xi'an in about 4½ hours, watching the North China Plain give way to loess hills. (Florence's first bullet train.)</p></div></div>
+          <div class="foodnote"><b>Eat:</b> Peking duck · hand-pulled noodles · jianbing street crepes at breakfast · dumplings by the bamboo steamer · hot pot if anyone's brave.</div>
+        </div>
+        <div>
+          <div class="citymap">
+            <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="310" rx="10" fill="#FBF6EA"/>
+              <rect x="70" y="62" width="220" height="180" rx="26" fill="none" stroke="#E0CFA9" stroke-width="6"/>
+              <rect x="120" y="102" width="120" height="100" rx="14" fill="none" stroke="#E0CFA9" stroke-width="5"/>
+              <g font-family="'Source Sans 3',sans-serif" font-size="11.5" font-weight="600" fill="#5A4F47">
+                <rect x="171" y="128" width="18" height="26" fill="#C99A3C" stroke="#8E2418" stroke-width="2.5"/>
+                <text x="196" y="140" fill="#8E2418" font-weight="700">Forbidden City</text>
+                <circle cx="180" cy="168" r="5" fill="#C13B2A"/><text x="190" y="180">Tiananmen Sq</text>
+                <circle cx="180" cy="116" r="5" fill="#C13B2A"/><text x="128" y="106">Jingshan ⛰</text>
+                <circle cx="150" cy="112" r="5" fill="#2E6E62"/><text x="84" y="126">Beihai</text>
+                <circle cx="212" cy="103" r="5" fill="#C99A3C"/><text x="222" y="99">hutongs</text>
+                <circle cx="196" cy="252" r="5" fill="#C13B2A"/><text x="206" y="264">Temple of Heaven</text>
+                <circle cx="84" cy="72" r="5" fill="#C13B2A"/><text x="14" y="60">Summer Palace</text>
+                <circle cx="300" cy="84" r="5" fill="#2E6E62"/><text x="308" y="76">798 Art</text>
+                <circle cx="88" cy="170" r="5" fill="#2E6E62"/><text x="16" y="192">Military Museum</text>
+                <path d="M300 44 L330 22" stroke="#8E2418" stroke-width="2.5" marker-end="none"/>
+                <text x="196" y="30" fill="#8E2418" font-weight="700">Great Wall · 90 min ↗</text>
+              </g>
+            </svg>
+            <div class="cap">Beijing — schematic, not to scale</div>
+          </div>
+          <div class="foodnote" style="border-left-color:var(--jade)"><b>Base:</b> a serviced-apartment block (2–3 bedroom units with kitchens &amp; laundry) near the center — communal living room for family evenings, kitchen for toddler breakfasts.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== XI'AN ======== -->
+    <div class="city">
+      <div class="city-banner">
+        <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of terracotta warriors and a pagoda">
+          <rect width="1000" height="230" fill="#EFD9AE"/>
+          <circle cx="870" cy="62" r="40" fill="#D9542B" opacity=".8"/>
+          <!-- wall crenellation strip -->
+          <path d="M0 40 h40 v-14 h26 v14 h40 v-14 h26 v14 h40 v-14 h26 v14 h40 v-14 h26 v14 h40" fill="none" stroke="#B98B54" stroke-width="6"/>
+          <rect y="200" width="1000" height="30" fill="#B98B54"/>
+          <!-- pagoda -->
+          <g transform="translate(700,38)" stroke="#7C4A2D" stroke-width="3" fill="#E8D0A0">
+            <rect x="30" y="122" width="80" height="42"/><path d="M14 122 L126 122 L112 106 L28 106 Z" fill="#A96F45"/>
+            <rect x="40" y="76" width="60" height="30"/><path d="M26 76 L114 76 L102 60 L38 60 Z" fill="#A96F45"/>
+            <rect x="50" y="34" width="40" height="26"/><path d="M38 34 L102 34 L92 20 L48 20 Z" fill="#A96F45"/>
+            <line x1="70" y1="20" x2="70" y2="4"/>
+          </g>
+          <!-- warriors -->
+          <g stroke="#6B4A35" stroke-width="3">
+            <g transform="translate(120,84)">
+              <circle cx="30" cy="22" r="18" fill="#C89B66"/><path d="M12 22 a18 18 0 0 1 36 0" fill="#A97B4A"/>
+              <rect x="8" y="42" width="44" height="76" rx="12" fill="#C89B66"/><rect x="16" y="58" width="28" height="34" rx="6" fill="#B98B54"/>
+            </g>
+            <g transform="translate(230,90)">
+              <circle cx="30" cy="22" r="18" fill="#D2A876"/><path d="M12 22 a18 18 0 0 1 36 0" fill="#B3855A"/>
+              <rect x="8" y="42" width="44" height="72" rx="12" fill="#D2A876"/><rect x="16" y="58" width="28" height="32" rx="6" fill="#C2946A"/>
+            </g>
+            <g transform="translate(340,86)">
+              <circle cx="30" cy="22" r="18" fill="#C89B66"/><path d="M12 22 a18 18 0 0 1 36 0" fill="#A97B4A"/>
+              <rect x="8" y="42" width="44" height="74" rx="12" fill="#C89B66"/><rect x="16" y="58" width="28" height="33" rx="6" fill="#B98B54"/>
+            </g>
+            <g transform="translate(450,92)" opacity=".75">
+              <circle cx="30" cy="22" r="17" fill="#D2A876"/><path d="M13 22 a17 17 0 0 1 34 0" fill="#B3855A"/>
+              <rect x="9" y="41" width="42" height="70" rx="12" fill="#D2A876"/>
+            </g>
+            <g transform="translate(550,96)" opacity=".5">
+              <circle cx="28" cy="21" r="16" fill="#C89B66"/><rect x="9" y="39" width="38" height="66" rx="11" fill="#C89B66"/>
+            </g>
+          </g>
+        </svg>
+        <div class="city-title"><span class="zh">西安</span><h3>Xi'an</h3></div>
+        <span class="city-days">DAYS 6–10</span>
+      </div>
+      <div class="city-body">
+        <div>
+          <div class="day"><div class="dnum">6</div><div><h4>Evening: the Muslim Quarter</h4><p>Off the train and straight into Xi'an's thousand-year-old Hui neighborhood: lamb skewers, pomegranate juice, biangbiang noodles, and the drum-tower lanterns coming on at dusk.</p></div></div>
+          <div class="day"><div class="dnum">7</div><div><h4>The Terracotta Army</h4><p>Eight thousand individually-faced soldiers, buried 2,200 years ago to guard China's first emperor — first entry slot, with a guide who makes the pits come alive. Afternoon: Huaqing Palace hot-springs gardens on the way back.</p></div></div>
+          <div class="day"><div class="dnum">8</div><div><h4>Ride the city walls</h4><p>Xi'an's Ming walls are intact — all 8.5 miles — and you can bicycle the top of them (tandems available, 8am before the heat). Afternoon: the Shaanxi History Museum's Tang-dynasty gold, then the Wild Goose Pagoda fountain square at dusk.</p></div></div>
+          <div class="day"><div class="dnum">9</div><div><h4>Split day: Mount Hua or mellow Xi'an</h4><p>The fit and fearless take a 30-minute bullet train to Huashan — granite peaks, chain-railed cliff paths, cable cars over the void. Everyone else: Tang Paradise gardens, a dumpling banquet, and the pool.</p></div></div>
+          <div class="day"><div class="dnum">10</div><div><h4>Train east along the Yellow River valley</h4><p>Suitcases ship ahead by courier; we glide 5 hours across the old Central Plains — past Luoyang and Kaifeng, capitals of a dozen dynasties — to Nanjing on the Yangtze.</p></div></div>
+          <div class="foodnote"><b>Eat:</b> biangbiang noodles · roujiamo ("Chinese burgers") · yangrou paomo lamb soup · an 18-course dumpling banquet · persimmon doughnuts in the Muslim Quarter.</div>
+        </div>
+        <div>
+          <div class="citymap">
+            <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="310" rx="10" fill="#FBF6EA"/>
+              <rect x="78" y="86" width="180" height="130" fill="none" stroke="#B98B54" stroke-width="7"/>
+              <g font-family="'Source Sans 3',sans-serif" font-size="11.5" font-weight="600" fill="#5A4F47">
+                <text x="88" y="78" fill="#8A6B4F" font-weight="700">Ming city wall (bike it!)</text>
+                <circle cx="168" cy="152" r="5" fill="#C13B2A"/><text x="150" y="170">Bell Tower</text>
+                <circle cx="146" cy="128" r="5" fill="#C99A3C"/><text x="92" y="120">Muslim Qtr</text>
+                <circle cx="205" cy="252" r="5" fill="#C13B2A"/><text x="96" y="256">Shaanxi History Mus.</text>
+                <circle cx="240" cy="276" r="5" fill="#2E6E62"/><text x="250" y="288">Wild Goose Pagoda</text>
+                <path d="M280 130 L322 130" stroke="#8E2418" stroke-width="2.5"/>
+                <text x="266" y="118" fill="#8E2418" font-weight="700">Terracotta Army · 40 km →</text>
+                <path d="M280 190 L322 190" stroke="#2E6E62" stroke-width="2.5" stroke-dasharray="6 4"/>
+                <text x="252" y="212" fill="#2E6E62" font-weight="700">Huashan · HSR 30 min →</text>
+              </g>
+            </svg>
+            <div class="cap">Xi'an — schematic, not to scale</div>
+          </div>
+          <div class="foodnote" style="border-left-color:var(--jade)"><b>Why Xi'an:</b> capital of 13 dynasties and the eastern end of the Silk Road — the city where "ancient China" is most alive, and the cheapest, tastiest stop on the route.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== NANJING ======== -->
+    <div class="city">
+      <div class="city-banner">
+        <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the Sun Yat-sen Mausoleum stairway on Purple Mountain">
+          <rect width="1000" height="230" fill="#EAE3CE"/>
+          <circle cx="130" cy="66" r="42" fill="#D9542B" opacity=".75"/>
+          <!-- purple mountain -->
+          <path d="M0 230 L200 130 L380 200 L560 96 L760 190 L1000 120 L1000 230 Z" fill="#6E5A78" opacity=".35"/>
+          <path d="M240 230 L520 110 L820 230 Z" fill="#5C4A66" opacity=".5"/>
+          <!-- staircase -->
+          <g stroke="#F2E9D6" stroke-width="5">
+            <line x1="470" y1="214" x2="570" y2="214"/><line x1="476" y1="200" x2="564" y2="200"/>
+            <line x1="482" y1="186" x2="558" y2="186"/><line x1="488" y1="172" x2="552" y2="172"/>
+            <line x1="494" y1="158" x2="546" y2="158"/><line x1="500" y1="144" x2="540" y2="144"/>
+          </g>
+          <!-- mausoleum hall -->
+          <g transform="translate(478,84)">
+            <rect x="10" y="30" width="64" height="28" fill="#F2E9D6" stroke="#5A4F47" stroke-width="3"/>
+            <path d="M0 30 L84 30 L66 8 L18 8 Z" fill="#4A6FA5" stroke="#2F4A73" stroke-width="3"/>
+            <rect x="34" y="40" width="16" height="18" fill="#3C4B63"/>
+          </g>
+          <!-- trees -->
+          <g fill="#3E6B52">
+            <circle cx="330" cy="196" r="24"/><rect x="326" y="196" width="8" height="26" fill="#6B4A35"/>
+            <circle cx="700" cy="190" r="28"/><rect x="696" y="190" width="8" height="30" fill="#6B4A35"/>
+            <circle cx="770" cy="204" r="18"/><rect x="767" y="204" width="6" height="20" fill="#6B4A35"/>
+          </g>
+        </svg>
+        <div class="city-title"><span class="zh">南京</span><h3>Nanjing</h3></div>
+        <span class="city-days">DAYS 10–12</span>
+      </div>
+      <div class="city-body">
+        <div>
+          <div class="day"><div class="dnum">10</div><div><h4>The republic's capital</h4><p>Afternoon at the Presidential Palace — seat of the Republic of China, Chiang Kai-shek's office still intact — a crash course in the half-century between the emperors and Mao. Evening: the lantern-lit old lanes of Laomendong.</p></div></div>
+          <div class="day"><div class="dnum">11</div><div><h4>Purple Mountain</h4><p>Morning on the forested mountain east of town: the grand 392-step ascent to Sun Yat-sen's mausoleum, then the stone-elephant avenue of the first Ming emperor's tomb. Afternoon: nap. Optional for adults: the Nanjing Massacre Memorial — moving and heavy; entirely each person's call.</p></div></div>
+          <div class="day"><div class="dnum">12</div><div><h4>Onward to the garden city</h4><p>A one-hour hop through the Yangtze delta to Suzhou — the "Venice of the East," where retired Ming officials competed to build the perfect garden.</p></div></div>
+          <div class="foodnote"><b>Eat:</b> Nanjing salted duck · tangbao soup dumplings (drink first, then eat) · sesame pancakes in Laomendong.</div>
+        </div>
+        <div>
+          <div class="citymap">
+            <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="310" rx="10" fill="#FBF6EA"/>
+              <path d="M-10 90 C 60 60, 100 30, 150 -10" stroke="#9CC0BA" stroke-width="16" fill="none" opacity=".7"/>
+              <text x="20" y="34" font-size="12" fill="#5E8781" font-style="italic" font-family="Georgia,serif">Yangtze</text>
+              <path d="M96 96 C 70 150, 76 210, 120 248 C 170 282, 220 260, 232 220 C 244 180, 236 130, 200 100 C 170 76, 120 70, 96 96 Z" fill="none" stroke="#B98B54" stroke-width="5"/>
+              <ellipse cx="288" cy="128" rx="58" ry="44" fill="#3E6B52" opacity=".25"/>
+              <g font-family="'Source Sans 3',sans-serif" font-size="11.5" font-weight="600" fill="#5A4F47">
+                <text x="238" y="86" fill="#3E6B52" font-weight="700">Purple Mountain</text>
+                <circle cx="296" cy="122" r="5" fill="#C13B2A"/><text x="248" y="112">Sun Yat-sen Maus.</text>
+                <circle cx="262" cy="146" r="5" fill="#C99A3C"/><text x="240" y="166">Ming Xiaoling</text>
+                <circle cx="178" cy="150" r="5" fill="#C13B2A"/><text x="120" y="142">Presidential Palace</text>
+                <circle cx="160" cy="226" r="5" fill="#C99A3C"/><text x="122" y="246">Laomendong</text>
+                <circle cx="104" cy="192" r="5" fill="#2E6E62"/><text x="16" y="212">Massacre Memorial</text>
+                <text x="98" y="86" fill="#8A6B4F" font-weight="700">Ming city wall</text>
+              </g>
+            </svg>
+            <div class="cap">Nanjing — schematic, not to scale</div>
+          </div>
+          <div class="foodnote" style="border-left-color:var(--jade)"><b>Why Nanjing:</b> the missing chapter between imperial Beijing and modern Shanghai — Ming capital, then capital of Sun Yat-sen and Chiang Kai-shek's republic.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== SUZHOU ======== -->
+    <div class="city">
+      <div class="city-banner">
+        <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a moon gate, garden and canal in Suzhou">
+          <rect width="1000" height="230" fill="#EFEADB"/>
+          <!-- canal -->
+          <rect y="180" width="1000" height="50" fill="#9CC0BA"/>
+          <path d="M0 186 q 60 6 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0" stroke="#7FA9A2" stroke-width="3" fill="none"/>
+          <!-- boat -->
+          <g transform="translate(700,168)"><path d="M0 22 Q 40 34 80 22 L 68 12 L 12 12 Z" fill="#6B4A35"/><rect x="28" y="-6" width="24" height="18" rx="4" fill="#B98B54"/></g>
+          <!-- wall with moon gate -->
+          <rect x="120" y="40" width="420" height="140" fill="#F7F3E7" stroke="#CFC4A6" stroke-width="3"/>
+          <path d="M120 40 h420 l-8 -12 h-404 Z" fill="#4C4A44"/>
+          <circle cx="330" cy="118" r="58" fill="#EFEADB" stroke="#4C4A44" stroke-width="6"/>
+          <!-- view through gate: rock + pavilion -->
+          <g>
+            <path d="M300 148 q 8 -40 26 -22 q 4 -26 20 -12 q 12 -18 22 4 q 10 -6 8 12 l 4 18 Z" fill="#8B8578"/>
+            <path d="M352 108 l 16 0 l -4 -10 l -8 0 Z" fill="#C13B2A"/>
+          </g>
+          <!-- willow -->
+          <g stroke="#3E6B52" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M620 60 q -6 60 -18 110"/><path d="M620 60 q 10 66 2 120"/><path d="M620 60 q 22 50 26 104"/><path d="M620 60 q -22 44 -34 96"/>
+          </g>
+          <rect x="612" y="40" width="14" height="28" rx="6" fill="#6B4A35"/>
+          <circle cx="620" cy="40" r="24" fill="#3E6B52" opacity=".85"/>
+          <!-- lattice hint -->
+          <g stroke="#CFC4A6" stroke-width="3">
+            <rect x="800" y="70" width="70" height="70" fill="#F7F3E7"/>
+            <line x1="800" y1="105" x2="870" y2="105"/><line x1="835" y1="70" x2="835" y2="140"/>
+            <circle cx="835" cy="105" r="16" fill="none"/>
+          </g>
+        </svg>
+        <div class="city-title"><span class="zh">苏州</span><h3>Suzhou</h3></div>
+        <span class="city-days">DAYS 12–13</span>
+      </div>
+      <div class="city-body">
+        <div>
+          <div class="day"><div class="dnum">12</div><div><h4>Canals &amp; a garden by lantern light</h4><p>Arrive midday: I.M. Pei's jewel-box Suzhou Museum, then gelato-paced wandering on Pingjiang Road, a 800-year-old canal street. After dark: the Master of the Nets Garden's night performances — kunqu opera and guqin music drifting room to room.</p></div></div>
+          <div class="day"><div class="dnum">13</div><div><h4>The Humble Administrator's Garden</h4><p>China's most celebrated classical garden at 7:30 opening, when it's just us, the lotus ponds, and the pavilion reflections. Then the 25-minute hop into Shanghai — and the Bund at night: the full neon skyline reveal, the trip's crescendo.</p></div></div>
+          <div class="foodnote"><b>Eat:</b> Suzhou noodle-shop breakfast · sweet braised pork belly · osmanthus rice cakes · biluochun green tea.</div>
+        </div>
+        <div>
+          <div class="citymap">
+            <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="310" rx="10" fill="#FBF6EA"/>
+              <g stroke="#B9D5D0" stroke-width="8" opacity=".8">
+                <line x1="130" y1="20" x2="130" y2="290"/><line x1="230" y1="20" x2="230" y2="290"/>
+                <line x1="40" y1="110" x2="330" y2="110"/><line x1="40" y1="200" x2="330" y2="200"/>
+              </g>
+              <g font-family="'Source Sans 3',sans-serif" font-size="11.5" font-weight="600" fill="#5A4F47">
+                <circle cx="205" cy="88" r="5" fill="#C13B2A"/><text x="215" y="82">Humble Administrator's</text>
+                <circle cx="182" cy="76" r="5" fill="#C99A3C"/><text x="60" y="70">Suzhou Museum</text>
+                <circle cx="218" cy="140" r="5" fill="#2E6E62"/><text x="228" y="152">Pingjiang Road</text>
+                <circle cx="198" cy="224" r="5" fill="#C13B2A"/><text x="96" y="244">Master of the Nets</text>
+                <circle cx="86" cy="56" r="5" fill="#C99A3C"/><text x="30" y="44">Tiger Hill</text>
+                <path d="M300 262 L336 262" stroke="#8E2418" stroke-width="2.5"/>
+                <text x="216" y="284" fill="#8E2418" font-weight="700">Shanghai · 25 min →</text>
+              </g>
+            </svg>
+            <div class="cap">Suzhou — schematic, not to scale</div>
+          </div>
+          <div class="foodnote" style="border-left-color:var(--jade)"><b>Why Suzhou:</b> Marco Polo's "Venice of the East" — the gardens here are the ones every Chinese ink painting is trying to be.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== SHANGHAI ======== -->
+    <div class="city">
+      <div class="city-banner">
+        <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the Shanghai skyline at dusk">
+          <defs><linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3CE93"/><stop offset="1" stop-color="#DE8B5B"/></linearGradient></defs>
+          <rect width="1000" height="230" fill="url(#dusk)"/>
+          <circle cx="120" cy="76" r="38" fill="#D9542B"/>
+          <!-- river -->
+          <rect y="192" width="1000" height="38" fill="#7FA9A2"/>
+          <path d="M0 200 q 80 8 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0" stroke="#5E8781" stroke-width="3" fill="none"/>
+          <!-- bund row -->
+          <g fill="#4C4A44">
+            <rect x="60" y="140" width="34" height="52"/><path d="M60 140 h34 l-17 -16 Z"/>
+            <rect x="104" y="150" width="30" height="42"/>
+            <rect x="142" y="132" width="36" height="60"/><rect x="152" y="118" width="16" height="14"/>
+            <rect x="188" y="148" width="28" height="44"/><path d="M188 148 h28 l-14 -12 Z"/>
+          </g>
+          <!-- pudong towers -->
+          <g>
+            <!-- oriental pearl -->
+            <g stroke="#3C3A34" stroke-width="5" fill="#C13B2A">
+              <line x1="560" y1="192" x2="560" y2="60"/>
+              <circle cx="560" cy="150" r="17"/><circle cx="560" cy="96" r="12"/><circle cx="560" cy="60" r="6"/>
+            </g>
+            <!-- jin mao -->
+            <g fill="#4C4A44">
+              <rect x="640" y="112" width="44" height="80"/><rect x="648" y="92" width="28" height="20"/><rect x="656" y="76" width="12" height="16"/><line x1="662" y1="76" x2="662" y2="58" stroke="#4C4A44" stroke-width="4"/>
+            </g>
+            <!-- swfc bottle opener -->
+            <g fill="#5C5A52"><path d="M720 192 L732 64 L768 64 L780 192 Z"/><rect x="738" y="70" width="24" height="18" fill="url(#dusk)"/></g>
+            <!-- shanghai tower -->
+            <g><path d="M830 192 C 822 130, 828 70, 850 30 C 872 70, 878 130, 870 192 Z" fill="#3C3A34"/><path d="M850 30 C 862 66, 866 120, 862 178" stroke="#C99A3C" stroke-width="3" fill="none"/></g>
+          </g>
+          <!-- lit windows -->
+          <g fill="#F3CE93">
+            <rect x="648" y="120" width="5" height="5"/><rect x="660" y="132" width="5" height="5"/><rect x="670" y="118" width="5" height="5"/>
+            <rect x="740" y="100" width="5" height="5"/><rect x="752" y="120" width="5" height="5"/><rect x="748" y="150" width="5" height="5"/>
+            <rect x="842" y="90" width="5" height="5"/><rect x="852" y="120" width="5" height="5"/><rect x="846" y="150" width="5" height="5"/>
+            <rect x="70" y="150" width="5" height="5"/><rect x="152" y="142" width="5" height="5"/><rect x="196" y="158" width="5" height="5"/>
+          </g>
+        </svg>
+        <div class="city-title"><span class="zh">上海</span><h3>Shanghai</h3></div>
+        <span class="city-days">DAYS 13–16</span>
+      </div>
+      <div class="city-body">
+        <div>
+          <div class="day"><div class="dnum">13</div><div><h4>Evening: the Bund</h4><p>Colonial banking palaces on one bank, the 21st-century Pudong skyline blazing on the other — the single best before/after image of modern China, and it's just a riverside stroll.</p></div></div>
+          <div class="day"><div class="dnum">14</div><div><h4>Old Shanghai, new Shanghai</h4><p>Yu Garden and the old-town bazaar early, then the Shanghai Museum's bronzes and ink paintings (or the Urban Planning Center's giant scale-model of the whole city). Sunset from the 128th floor of Shanghai Tower, the world's second-tallest building.</p></div></div>
+          <div class="day"><div class="dnum">15</div><div><h4>French Concession &amp; farewell banquet</h4><p>Plane-tree lanes, Sun Yat-sen's house, coffee shops and dumpling counters — Shanghai at ground level. Florence option: the excellent Natural History Museum (or, dare we, Shanghai Disneyland). Farewell dinner in our own private dining room, lazy susan spinning.</p></div></div>
+          <div class="day"><div class="dnum">16</div><div><h4>Departures — by levitating train</h4><p>Homeward-bound travelers ride the maglev to the airport: 267&nbsp;mph, floating on magnets, seven minutes, $7. The extension crews scatter — Hangzhou for some, Chengdu for others.</p></div></div>
+          <div class="foodnote"><b>Eat:</b> xiaolongbao soup dumplings · shengjianbao (their crispy-bottomed cousins) · scallion-oil noodles · one properly fancy farewell banquet.</div>
+        </div>
+        <div>
+          <div class="citymap">
+            <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="310" rx="10" fill="#FBF6EA"/>
+              <path d="M210 -10 C 190 60, 200 120, 196 160 C 192 210, 210 260, 250 310" stroke="#9CC0BA" stroke-width="18" fill="none" opacity=".85"/>
+              <text x="150" y="34" font-size="12" fill="#5E8781" font-style="italic" font-family="Georgia,serif">Huangpu</text>
+              <g font-family="'Source Sans 3',sans-serif" font-size="11.5" font-weight="600" fill="#5A4F47">
+                <circle cx="182" cy="132" r="5" fill="#C13B2A"/><text x="120" y="124">the Bund</text>
+                <circle cx="162" cy="184" r="5" fill="#C99A3C"/><text x="94" y="196">Yu Garden</text>
+                <circle cx="122" cy="140" r="5" fill="#2E6E62"/><text x="20" y="132">Shanghai Museum</text>
+                <circle cx="130" cy="212" r="5" fill="#2E6E62"/><text x="70" y="232">Xintiandi</text>
+                <text x="30" y="262" fill="#8A6B4F" font-weight="700" font-style="italic">French Concession</text>
+                <circle cx="232" cy="118" r="5" fill="#C13B2A"/><text x="242" y="112">Shanghai Tower</text>
+                <circle cx="272" cy="152" r="5" fill="#C99A3C"/><text x="248" y="172">Museum East</text>
+                <path d="M262 258 L322 288" stroke="#8E2418" stroke-width="2.5" stroke-dasharray="7 5"/>
+                <text x="216" y="252" fill="#8E2418" font-weight="700">maglev → PVG ✈</text>
+              </g>
+            </svg>
+            <div class="cap">Shanghai — schematic, not to scale</div>
+          </div>
+          <div class="foodnote" style="border-left-color:var(--jade)"><b>Why Shanghai:</b> the trip's grand finale — after two weeks of dynasties, the city that shows you where China is <i>going</i>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXTENSIONS ============ -->
+<section id="extensions" style="background:var(--paper2);border-top:1px solid #E7DCC4;border-bottom:1px solid #E7DCC4">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">延伸</span><h2>Week 3: the trip branches</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Day 16, everyone scatters from Shanghai — most fly home, and two crews (now fully China-fluent after two weeks of practice) carry on. The agency books the onward trains, flights and first hotels; after that it's easy-mode independent travel.</p>
+    <div class="ext-grid">
+      <div class="ext">
+        <svg viewBox="0 0 500 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of West Lake with a pagoda and arched bridge">
+          <rect width="500" height="190" fill="#E7EAD9"/>
+          <path d="M0 110 L110 54 L220 104 L330 44 L440 100 L500 70 L500 110 Z" fill="#8FA98C" opacity=".5"/>
+          <rect y="120" width="500" height="70" fill="#A8C8C2"/>
+          <path d="M0 128 q 50 6 100 0 t 100 0 t 100 0 t 100 0 t 100 0" stroke="#7FA9A2" stroke-width="3" fill="none"/>
+          <!-- pagoda -->
+          <g transform="translate(360,28)" stroke="#6B4A35" stroke-width="2.5" fill="#C89B66">
+            <rect x="22" y="68" width="46" height="26"/><path d="M12 68 L78 68 L68 56 L22 56 Z" fill="#8E2418"/>
+            <rect x="28" y="40" width="34" height="16"/><path d="M20 40 L70 40 L62 28 L28 28 Z" fill="#8E2418"/>
+            <rect x="34" y="16" width="22" height="12"/><path d="M28 16 L62 16 L54 6 L36 6 Z" fill="#8E2418"/>
+          </g>
+          <path d="M355 94 L455 94 L455 120 L355 120 Z" fill="#7E9C79" opacity=".6"/>
+          <!-- bridge -->
+          <path d="M60 140 q 60 -44 120 0" fill="none" stroke="#F2E9D6" stroke-width="8"/>
+          <path d="M60 140 q 60 -44 120 0" fill="none" stroke="#8B8578" stroke-width="3" stroke-dasharray="6 5"/>
+          <!-- lotus -->
+          <g fill="#3E6B52"><ellipse cx="280" cy="152" rx="16" ry="5"/><ellipse cx="310" cy="162" rx="13" ry="4"/><ellipse cx="250" cy="166" rx="14" ry="4"/></g>
+          <circle cx="295" cy="146" r="5" fill="#C13B2A"/>
+        </svg>
+        <div class="pad">
+          <span class="tagline">Jackson · Tandena · Florence</span>
+          <h3>Hangzhou &amp; the lake country <span class="zh" style="color:var(--gold)">杭州</span></h3>
+          <p>One hour by train, a world away: <b>West Lake</b> by boat, the cliff-carved Buddhas of <b>Lingyin Temple</b>, tea-picking villages at <b>Dragon Well</b>, and the palaces and kilns of the <b>Southern Song dynasty</b> — the 12th-century capital when China was the richest, most inventive place on earth. Plus a peek at Hangzhou's other claim to fame: it's China's robotics-startup capital. Loop home through a canal water-town and fly out of Shanghai.</p>
+        </div>
+      </div>
+      <div class="ext">
+        <svg viewBox="0 0 500 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a giant panda with bamboo">
+          <rect width="500" height="190" fill="#DFE8DA"/>
+          <!-- bamboo -->
+          <g stroke="#4F7D4A" stroke-width="10" stroke-linecap="round">
+            <line x1="70" y1="190" x2="78" y2="10"/><line x1="120" y1="190" x2="112" y2="24"/><line x1="420" y1="190" x2="430" y2="16"/>
+          </g>
+          <g stroke="#DFE8DA" stroke-width="4">
+            <line x1="71" y1="150" x2="81" y2="148"/><line x1="73" y1="100" x2="83" y2="98"/><line x1="75" y1="52" x2="85" y2="50"/>
+            <line x1="118" y1="140" x2="108" y2="138"/><line x1="116" y1="84" x2="106" y2="82"/>
+            <line x1="422" y1="140" x2="432" y2="138"/><line x1="425" y1="80" x2="435" y2="78"/>
+          </g>
+          <g fill="#4F7D4A"><path d="M84 60 q 30 -18 54 -6 q -26 16 -54 6"/><path d="M108 96 q 28 -20 56 -10 q -24 18 -56 10"/><path d="M428 66 q -30 -18 -54 -6 q 26 16 54 6"/></g>
+          <!-- panda -->
+          <g transform="translate(195,40)">
+            <ellipse cx="60" cy="110" rx="66" ry="46" fill="#F7F3E7" stroke="#2B2320" stroke-width="3"/>
+            <ellipse cx="14" cy="128" rx="20" ry="16" fill="#2B2320"/><ellipse cx="106" cy="128" rx="20" ry="16" fill="#2B2320"/>
+            <circle cx="60" cy="46" r="38" fill="#F7F3E7" stroke="#2B2320" stroke-width="3"/>
+            <circle cx="30" cy="16" r="13" fill="#2B2320"/><circle cx="90" cy="16" r="13" fill="#2B2320"/>
+            <ellipse cx="44" cy="42" rx="11" ry="14" fill="#2B2320" transform="rotate(-18 44 42)"/>
+            <ellipse cx="76" cy="42" rx="11" ry="14" fill="#2B2320" transform="rotate(18 76 42)"/>
+            <circle cx="46" cy="40" r="4" fill="#fff"/><circle cx="74" cy="40" r="4" fill="#fff"/>
+            <ellipse cx="60" cy="60" rx="7" ry="5" fill="#2B2320"/>
+            <path d="M60 65 q 0 8 -8 10 M60 65 q 0 8 8 10" stroke="#2B2320" stroke-width="2.5" fill="none"/>
+            <!-- bamboo in paw -->
+            <line x1="118" y1="60" x2="150" y2="140" stroke="#4F7D4A" stroke-width="7" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="pad">
+          <span class="tagline">Warren · Margot</span>
+          <h3>Chengdu &amp; Sichuan <span class="zh" style="color:var(--gold)">成都</span></h3>
+          <p>A 3½-hour flight west to China's most laid-back big city: <b>baby pandas at the research base</b> at feeding time, the hallucinatory 3,000-year-old bronze masks of <b>Sanxingdui</b>, the 2,300-year-old <b>Dujiangyan waterworks</b> (still irrigating the province) beside the Taoist slopes of Qingcheng Mountain — fueled throughout by teahouses, mapo tofu, and proper Sichuan hotpot. Fly home from Chengdu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="tour">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">安排</span><h2>How it works</h2></div>
+    <div class="rule"></div>
+    <div class="tourbox">
+      <h3>A guided tour where the group is just us</h3>
+      <p>A China-specialist agency (we'll get competing quotes from the two or three best-reviewed: China Highlights, The China Guide, Laurus Travel) builds this exact itinerary as a <b>private tour</b>: they book the lodging, every train ticket, a private van + driver, and a local English-speaking guide in each city — and crucially, they handle China's timed-entry ticket systems, where top sites release passport-linked reservations only days ahead and sell out in minutes. Someone always meets us at the station. Nobody is ever stranded with a phone that won't cooperate.</p>
+      <p>Unlike a package tour: no strangers, no fixed pace (guides adjust around toddler naps and slow mornings), no minimum age, and no problem with our week-3 branches — they simply book the onward legs and wave goodbye. We set the rules: one anchor activity per morning, afternoons free, and no "jade factory" shopping stops (in writing).</p>
+      <div class="inc">
+        <div>🏠 Apartment-style lodging — 2–3 bedroom serviced apartments with kitchens &amp; laundry</div>
+        <div>🚄 All bullet-train tickets, booked the minute sales open</div>
+        <div>🚐 Private van + driver in every city</div>
+        <div>🧭 Local English-speaking guide in each city</div>
+        <div>🎫 Every entrance ticket &amp; timed reservation</div>
+        <div>✈️ Airport &amp; station transfers</div>
+        <div>🥢 Restaurant bookings — incl. private family dining rooms</div>
+        <div>📞 24/7 English help line</div>
+      </div>
+      <p style="margin-top:20px"><b>Ballpark cost:</b> roughly <b>$250–350 per person per day</b> land-only at this comfort level — call it <b>$3,500–5,000/person for the two weeks</b> — plus international airfare (≈$1,200–1,800 round-trip; we'd fly into Beijing and home from Shanghai). China on the ground is refreshingly cheap — great restaurant dinners run $10–15 a head — it's the flights that sting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGISTICS ============ -->
+<section id="logistics" style="padding-top:32px">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">须知</span><h2>Good to know</h2></div>
+    <div class="rule"></div>
+    <p class="lede">The short version of a much longer research doc. Headline: traveling in China got <i>dramatically</i> easier for foreigners between 2023 and 2026 — payments, trains, and translation are all essentially solved problems now.</p>
+    <div class="logi">
+      <div class="card"><h3><span class="ic">🛂</span>Visas</h3><p>Everyone (Florence included) needs a Chinese tourist visa: ~$70–140, valid 10 years, no interview or appointment — one person can courier the whole family's applications. We apply ~2 months out. Plus a quick online arrival form 72 hours before landing.</p></div>
+      <div class="card"><h3><span class="ic">💳</span>Money</h3><p>China runs on phone QR payments — and the apps (Alipay/WeChat Pay) now link directly to US credit cards. We each set them up before flying; small purchases are fee-free. A little cash as backup. No tipping, anywhere, ever.</p></div>
+      <div class="card"><h3><span class="ic">📱</span>Phones &amp; the internet</h3><p>Google, Gmail and WhatsApp are blocked on Chinese networks — but a $10 travel eSIM routes around the firewall automatically, so our phones work normally. No VPN wrangling needed. (Keep your US number active for verification texts.)</p></div>
+      <div class="card"><h3><span class="ic">🗣</span>Language</h3><p>Nobody needs Chinese. Camera-translate apps read menus and signs instantly; the ride-hailing app auto-translates driver chat; guides handle the rest. The one classic trick: carry the hotel's business card in Chinese for taxi drivers.</p></div>
+      <div class="card"><h3><span class="ic">🚄</span>Getting around</h3><p>Bullet trains between cities (your passport is your ticket); DiDi — China's Uber, with an English app — plus spotless, air-conditioned metros within them. For day trips: our own van and driver.</p></div>
+      <div class="card"><h3><span class="ic">👧</span>With Florence</h3><p>We bring a travel car seat, a carrier (Great Wall), and an umbrella stroller (Forbidden City). Diapers and milk in every supermarket; apartments give us kitchens, laundry and cribs. Fair warning: Chinese grandmas will treat her like a visiting celebrity.</p></div>
+      <div class="card"><h3><span class="ic">🏥</span>Health</h3><p>Routine vaccines up to date plus Hep A (travel clinic will advise on typhoid). Bottled water only. We'll carry group travel insurance including medical evacuation; Beijing and Shanghai have excellent English-speaking international hospitals.</p></div>
+      <div class="card"><h3><span class="ic">🌤</span>Weather &amp; packing</h3><p>June: mid-80s to low-90s, sunny north, chance of drizzle in the south late-month. Sun hats, cooling towels, comfortable shoes, one nice-ish outfit for banquet night. The daily rhythm (mornings out, midday AC, evenings out) does the rest.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREP TIMELINE ============ -->
+<section id="prep" style="background:var(--paper2);border-top:1px solid #E7DCC4">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">倒计时</span><h2>Countdown to wheels-up</h2></div>
+    <div class="rule"></div>
+    <div class="tl">
+      <div class="tl-item"><div class="when">Fall 2026</div><div class="what">Lock the dates and head-count; collect competing quotes from 2–3 tour agencies and pick one.</div></div>
+      <div class="tl-item"><div class="when">Dec 2026 – Feb 2027</div><div class="what">Book international flights — into Beijing, home from Shanghai. Eight seats together for June go fast.</div></div>
+      <div class="tl-item"><div class="when">~6 months out</div><div class="what">Apartments and hotels locked in (the agency handles it). Buy travel insurance.</div></div>
+      <div class="tl-item"><div class="when">~2 months out</div><div class="what">Travel-clinic visits. Visa applications — one batch, one courier run for the whole family.</div></div>
+      <div class="tl-item"><div class="when">2–4 weeks out</div><div class="what">Everyone installs and verifies the app kit (Alipay, WeChat, DiDi, Trip.com), orders a travel eSIM, downloads offline translation packs. One family video call to walk it through together.</div></div>
+      <div class="tl-item"><div class="when">15 days out</div><div class="what">Train tickets go on sale — agency books every seat the minute the window opens.</div></div>
+      <div class="tl-item"><div class="when">7 days out</div><div class="what">Timed tickets released for the Forbidden City and friends — agency books them against our passports.</div></div>
+      <div class="tl-item"><div class="when">72 hours out</div><div class="what">Online arrival cards for everyone. Then: 飞机去中国 — wheels up. 🎉</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><span class="zh">一路平安</span> · Researched July 2026 from current sources; details (visa fees, ticket rules, event dates) get re-verified in early 2027. A much longer planning document with sources and contingencies backs everything on this page — ask Jackson.</p>
+  </div>
+</footer>
+
+<script>
+  // nav active-state on scroll
+  const secs=[...document.querySelectorAll('section[id]')];
+  const links=[...document.querySelectorAll('nav .links a')];
+  const byId=Object.fromEntries(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); const l=byId[e.target.id]; if(l) l.classList.add('active'); }});
+  },{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
