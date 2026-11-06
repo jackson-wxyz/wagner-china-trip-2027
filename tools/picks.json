@@ -1,0 +1,10 @@
+{
+ "hero": {"idx": 1}, "beijing": {"idx": 0}, "xian": {"idx": 0}, "nanjing": {"idx": 0},
+ "suzhou": {"idx": 5}, "shanghai": {"idx": 12}, "hangzhou": {"idx": 12}, "chengdu": {"idx": 3},
+ "bj-heaven": {"idx": 7}, "bj-summer": {"idx": 0}, "bj-hutong": {"idx": 1}, "bj-forbidden": {"idx": 4},
+ "xa-wall": {"idx": 0}, "xa-pagoda": {"idx": 1}, "xa-huashan": {"idx": 2}, "xa-muslim": {"idx": 12},
+ "nj-palace": {"idx": 5}, "nj-ming": {"idx": 1}, "nj-qinhuai": {"idx": 3},
+ "sz-nets": {"idx": 0}, "sz-museum": {"idx": 11}, "sz-canal": {"idx": 13},
+ "sh-yu": {"idx": 0}, "sh-bund": {"idx": 13}, "sh-tower": {"idx": 0}, "sh-french": {"idx": 5},
+ "hz-lingyin": {"idx": 1}, "hz-tea": {"idx": 3}, "cd-sanxingdui": {"idx": 2}, "cd-dujiangyan": {"idx": 10}
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget &amp; Timeline · China 2027</title>
+<meta name="description" content="Bottom-up budget estimate and booking timeline for the Wagner family China trip, June 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .pagehead{position:relative;height:250px;overflow:hidden;background:#8E2418}
+  .pagehead img{width:100%;height:100%;object-fit:cover;display:block;opacity:.55}
+  .pagehead::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(142,36,24,.35),rgba(43,35,32,.7))}
+  .pagehead .t{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:30px;color:#fff}
+  .pagehead .kicker{font-weight:700;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:#F3CE93}
+  .pagehead h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:900;line-height:1.05}
+  .pagehead p{font-weight:600;opacity:.92}
+  .tip{position:fixed;z-index:80;pointer-events:none;background:#fff;border:1px solid #E0CFA9;border-radius:10px;padding:8px 11px;font-size:.85rem;box-shadow:0 4px 16px rgba(0,0,0,.15);opacity:0;transition:opacity .1s;max-width:240px}
+  .tip b{display:block;font-family:'Playfair Display',serif}
+  .tip .r{display:flex;justify-content:space-between;gap:14px;font-variant-numeric:tabular-nums;color:var(--ink2)}
+  .tip .r span:last-child{color:var(--ink);font-weight:700}
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
+  .commit td:nth-child(3){white-space:normal}
+  .keyline{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;font-size:.82rem;color:var(--ink2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark zh" href="index.html">中国</a>
+    <div class="links">
+      <a href="index.html">← Trip overview</a>
+      <a href="#budget">Budget</a>
+      <a href="#breakdown">Line items</a>
+      <a href="#bycity">By city</a>
+      <a href="#booking">When to book</a>
+      <a href="#timeline">Countdown</a>
+    </div>
+  </div>
+</nav>
+
+<header class="pagehead">
+  <img src="images/xa-wall.jpg" alt="">
+  <div class="t"><div class="wrap">
+    <span class="kicker">China · 2027 · the practical page</span>
+    <h1>Budget &amp; Timeline</h1>
+    <p>What it would cost, and when we'd actually have to decide.</p>
+  </div></div>
+</header>
+
+<!-- ============ BUDGET ============ -->
+<section id="budget">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">预算</span><h2>What it costs</h2></div>
+    <div class="rule"></div>
+    <p class="lede">A <b>bottom-up estimate per adult</b> for the shared two weeks (15 nights), built from 2026 published prices for each piece: trains, tickets, apartment rates, guide and van day-rates. It follows the lesson from our Japan trip, where the estimates came in about 15% low: <b>everything in-country gets a 20% cushion on top.</b> Florence's costs are Jackson &amp; Tandena's and aren't counted. Week-3 extensions are priced separately at the bottom.</p>
+    <div class="controls">
+      <span>Group size:</span>
+      <div class="seg" id="groupseg"><button data-n="6">6 adults</button><button data-n="7" class="on">7 adults</button><button data-n="8">8 adults</button></div>
+      <span class="muted" style="font-weight:400">Shared costs (guides, vans, apartments) split more ways in a bigger group.</span>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="bud-top" style="margin-top:24px">
+      <div class="donut-wrap" id="donut" role="img" aria-label="Donut chart of per-adult trip cost by category"></div>
+      <div>
+        <ul class="legend" id="legend"></ul>
+        <p class="muted" style="font-size:.82rem;margin-top:10px">Per adult, in US dollars. Hover a slice or row for details; the full line-item table is below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LINE ITEMS ============ -->
+<section id="breakdown" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">明细</span><h2>Line by line</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Low / estimate / high per adult, with the arithmetic and how firm each number is. Prices are converted at <b>¥6.75 = $1</b>.</p>
+    <div class="keyline"><span><span class="conf firm">published</span> from an official or current price list</span><span><span class="conf est">estimate</span> from comparable listings</span><span><span class="conf rough">rough</span> needs a real quote</span></div>
+    <div class="tablewrap"><table class="btable" id="lines"></table></div>
+    <div class="why">
+      <div class="card"><h3>What the agency's quote will replace</h3><p>Lodging, guides, vans, trains and tickets are what a private-tour agency bundles into one price. Our bottom-up version of that bundle comes to roughly <b id="pkgline">—</b> per adult per day. Small-group benchmarks run $165–250 per person per day. Real quotes from 2–3 agencies will replace these rows, and they cost nothing to get.</p></div>
+      <div class="card"><h3>Where it could come in lower</h3><p>Second-class seats instead of first (2+3 instead of 2+2 seating, about $85 less). Senior discounts at some sights, though whether foreign passports qualify is unclear. Applying for visas before Dec 31, 2026, while China's reduced $140 fee still applies. Hotel rooms instead of apartments in Nanjing and Suzhou.</p></div>
+      <div class="card"><h3>Where it could come in higher</h3><p>Flights bought late (see <a href="#booking">When to book</a>). Apartment rates, which are the least-certain numbers here. Optional splurges not in the base: the Huashan day (~$80), Shanghai Disneyland (~$90–120), a Huangpu river cruise (~$20), the Tang murals gallery (~$40).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BY CITY ============ -->
+<section id="bycity">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">城市</span><h2>By city</h2></div>
+    <div class="rule"></div>
+    <p class="lede">The same in-country estimate split by stop (per adult, before the 20% cushion). Beijing and Shanghai run highest per day; Xi'an and Nanjing are the bargains. Suzhou looks pricey per day only because its single night carries two half-days of guiding.</p>
+    <div class="tablewrap"><table class="btable" id="cities"></table></div>
+
+    <h3 style="margin-top:36px;font-size:1.3rem">Week-3 add-ons (not in the totals above)</h3>
+    <div class="tablewrap"><table class="btable">
+      <tr><th>Extension</th><th>Who</th><th class="n">Per person</th><th>Rough arithmetic</th></tr>
+      <tr><td><b>Hangzhou &amp; the lake country</b>, 6 nights</td><td>Jackson · Tandena · Florence</td><td class="n">$700–1,000</td><td class="note">Train $12 · hotel ~$110/room-night shared by two · food $35/day · sights &amp; boats ~$60 · a driver day to the water towns. Still fly home from Shanghai, so no flight change.</td></tr>
+      <tr><td><b>Chengdu &amp; Sichuan</b>, 6 nights</td><td>Warren · Margot</td><td class="n">$900–1,400</td><td class="note">Flight Shanghai → Chengdu $130–300 · hotel ~$100/room-night shared · food $35/day · pandas, Sanxingdui, Dujiangyan, Qingcheng ≈ $45 of tickets · 2 private driver days · flying home from Chengdu instead of Shanghai adds roughly $0–300.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============ WHEN TO BOOK ============ -->
+<section id="booking" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">何时</span><h2>Do we really have to commit early?</h2></div>
+    <div class="rule"></div>
+    <p class="lede"><b>Short answer: no, not this fall.</b> Nothing needs a commitment until about <b>early March 2027</b> for a June trip, and most of what we commit to then stays refundable until a few weeks before departure. The one thing that shouldn't wait for "8 weeks out" is the flights.</p>
+
+    <div class="cards3">
+      <div class="card"><span class="big">8 weeks?</span><h3>True for domestic flights, not for China in June</h3><p>Google's fare data puts the cheapest US domestic fares about 1–2 months out, so the 8-week rule is roughly right there. For international flights the cheapest window starts around 7 weeks out on average. But that average is dominated by short hops to Mexico and Europe.</p><p>For <b>US → China in summer</b>, route data points much earlier: Kayak's SFO–Beijing history is cheapest about <b>20–24 weeks out</b>, and CheapAir finds Asia fares bottom out about 4 months ahead, with June the priciest month of the year.</p></div>
+      <div class="card"><span class="big">Supply</span><h3>US–China flights are still rationed</h3><p>A government cap allows each country's airlines 50 round trips a week, about a third of pre-pandemic levels, and as of fall 2026 the quota is fully used. June is peak season.</p><p>A booking for several people is priced at whatever fare has enough seats for <i>everyone</i>, so a big family booking runs out of the cheap fares first. Typical June prices today: SFO–Beijing ≈ $1,490 round trip, Denver–Beijing ≈ $1,870.</p></div>
+      <div class="card"><span class="big">Low risk</span><h3>Booking early is mostly reversible</h3><p><b>Flights:</b> standard (not basic) economy on United, Delta or American has no change fee on international trips from the US. Cancelling gets you a credit valid about a year, which still covers a slip to August or September. Every US booking can also be cancelled free within 24 hours.</p><p><b>The agency:</b> China Highlights takes a 10% deposit with a <b>full refund up to 22 days before departure</b>. (Laurus is stricter: its $400 deposit is nonrefundable.)</p></div>
+    </div>
+
+    <h3 style="margin-top:34px;font-size:1.3rem">What needs committing, when, and how reversible it is</h3>
+    <div class="tablewrap"><table class="btable commit">
+      <tr><th>Step</th><th>When (June plan)</th><th>If we change our minds</th></tr>
+      <tr><td><b>Quotes from 2–3 agencies</b></td><td>Now – February</td><td>Free. No deposit needed for a quote.</td></tr>
+      <tr><td><b>Flights</b></td><td>January – early March (3–5 months out)</td><td>Standard economy: change for the fare difference, or cancel for a ~12-month credit. Avoid basic economy.</td></tr>
+      <tr><td><b>Agency deposit</b></td><td>~March, once flights are set</td><td>China Highlights: 10%, fully refundable until 22 days out (70% at 15–21 days).</td></tr>
+      <tr><td><b>Travel insurance</b></td><td>Within ~2 weeks of the first trip payment</td><td>Buying early is what unlocks pre-existing-condition coverage on most plans; most have a 10–15 day free-look refund.</td></tr>
+      <tr><td><b>Visas</b></td><td>By ~April (2 months out), or before Dec 31, 2026 to get the $140 fee</td><td>Fee is sunk ($140 now, $185 from Jan 1), but it's a 10-year visa.</td></tr>
+      <tr><td><b>Agency balance</b></td><td>~30 days out</td><td>The point of no return.</td></tr>
+    </table></div>
+    <p class="muted" style="font-size:.85rem;margin-top:10px">Sources: Google Flights booking-window insights (2025), CheapAir annual study (2025), Kayak route pages (Nov 2026), Delta change/cancel policy, US–China air-services cap reporting (2026), China Highlights and Laurus Travel terms (Nov 2026), Chinese Embassy fee notice (Dec 2025).</p>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">倒计时</span><h2>Countdown to wheels-up</h2></div>
+    <div class="rule"></div>
+    <div class="controls" style="margin-bottom:0">
+      <span>Trip window:</span>
+      <div class="seg" id="planseg"><button data-p="jun" class="on">June (Plan A)</button><button data-p="aug">Late August</button><button data-p="sep">Early September</button></div>
+    </div>
+    <div class="tl" id="tl"></div>
+    <div class="keyline"><span><span class="dotkey" style="--c:#fff;border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)"></span> no commitment</span><span><span class="dotkey" style="--c:var(--jade)"></span> decision point</span><span><span class="dotkey" style="--c:var(--verm)"></span> booking / task</span></div>
+
+    <div class="nextpage" style="margin-top:40px">
+      <div><h3>Back to the trip itself</h3><p>The route, the day-by-day itinerary, maps, and why June.</p></div>
+      <a class="btn" href="index.html">← Trip overview</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><span class="zh">一路平安</span> · Prices researched November 2026 from published fares, ticket lists, agency terms and comparable listings. Every "estimate" and "rough" row gets replaced by real agency quotes before anyone commits. Exchange rate ¥6.75 = $1.</p>
+    <details><summary>Photo credits</summary>
+      <ul class="credits"><!-- credits:start --><!-- credits:end --></ul>
+    </details>
+  </div>
+</footer>
+
+<div class="tip" id="tip"></div>
+
+<script>
+/* ---------------- the budget model ---------------- */
+const FX = 6.75;                      // CNY per USD
+const fmt = v => '$' + Math.round(v).toLocaleString('en-US');
+const cny = v => v / FX;
+
+// Per-city inputs. bed = $ per bedroom-night (half a 2BR serviced apartment);
+// guide/van = paid days; tickets = ¥ per adult for everything on that city's itinerary; meal = $ per adult per day.
+const CITIES = [
+  { name: 'Beijing',  nights: 5, bed: 150, guide: 5, van: 5, tickets: 1111, meal: 45,
+    tnote: 'Forbidden City ¥60 + galleries ¥20, Jingshan ¥2, Mutianyu ¥40 + shuttle ¥15 + cable car ¥140, acrobatics ~¥280, Temple of Heaven ¥34, Summer Palace ~¥60, Beihai + boats ~¥60, hutong food tour ~¥400' },
+  { name: "Xi'an",    nights: 4, bed: 85,  guide: 5, van: 5, tickets: 499, meal: 32,
+    tnote: 'Terracotta Army ¥120, Huaqing ¥120, city wall ¥54 + bike ¥45, Wild Goose Pagoda ¥40, Tang Paradise ~¥120; history museum free' },
+  { name: 'Nanjing',  nights: 2, bed: 95,  guide: 2, van: 2, tickets: 105, meal: 32,
+    tnote: 'Presidential Palace ~¥35, Ming Xiaoling ¥70; Sun Yat-sen Mausoleum and memorial free' },
+  { name: 'Suzhou',   nights: 1, bed: 85,  guide: 2, van: 2, tickets: 200, meal: 35,
+    tnote: 'Master of the Nets night garden ¥120, Humble Administrator\'s ¥80; Suzhou Museum free' },
+  { name: 'Shanghai', nights: 3, bed: 160, guide: 3, van: 3, tickets: 250, meal: 45,
+    tnote: 'Yu Garden ¥40, Shanghai Tower ¥180, Urban Planning Center ~¥30; Shanghai Museum free' },
+];
+const GUIDE_DAY = 150, VAN_DAY = 200;            // $ per day, agency rate incl. peak-season bump
+const TIPS_CNY_DAY = 225;                        // guide ¥150 + driver ¥75 per group per day
+const TRAIN = { long1: 860, long2: 950, short1: 130, short2: 40, maglev: 50 };  // ¥ per adult
+const CUSHION = 0.20, AGENCY = 0.15;
+
+// Categorical slots, fixed order (validated: dataviz default palette, light mode).
+const CATS = [
+  { id: 'flights', name: 'Flights',                         c: '#2a78d6' },
+  { id: 'lodging', name: 'Lodging',                         c: '#eb6834' },
+  { id: 'guides',  name: 'Guides, van & agency fee',        c: '#1baf7a' },
+  { id: 'meals',   name: 'Meals',                           c: '#eda100' },
+  { id: 'trains',  name: 'Trains & getting around',         c: '#e87ba4' },
+  { id: 'tickets', name: 'Tickets & experiences',           c: '#008300' },
+  { id: 'misc',    name: 'Visas, insurance, tips & eSIM',   c: '#6250d6' },
+  { id: 'cushion', name: '20% cushion',                     c: '#B7AE9F', neutral: true },
+];
+
+function model(N) {
+  const beds = Math.ceil(N / 2);
+  const perBedroom = CITIES.reduce((s, c) => s + c.nights * c.bed, 0);
+  const guideDays = CITIES.reduce((s, c) => s + c.guide, 0), vanDays = CITIES.reduce((s, c) => s + c.van, 0);
+  const lodging = perBedroom * beds / N;
+  const guides = (guideDays * GUIDE_DAY + vanDays * VAN_DAY) / N;
+  const trainsRail = cny(TRAIN.long1 + TRAIN.long2 + TRAIN.short1 + TRAIN.short2 + TRAIN.maglev) + 25;
+  const local = 75;
+  const tickets = cny(CITIES.reduce((s, c) => s + c.tickets, 0));
+  const meals = CITIES.reduce((s, c) => s + c.nights * c.meal, 0) + 15 + 85;
+  const tips = cny(TIPS_CNY_DAY * 16) / N;
+  const agencyBase = lodging + guides + trainsRail + tickets;
+  const agency = AGENCY * agencyBase;
+  const L = [];
+  const add = (cat, name, lo, mid, hi, conf, note) => L.push({ cat, name, lo, mid, hi, conf, note });
+  add('flights', 'International flights (open-jaw economy)', 1300, 1600, 1900, 'est',
+    'Into Beijing, home from Shanghai. June medians today: SFO–Beijing ≈ $1,490, Denver–Beijing ≈ $1,870 round trip. Assumes booking Jan–early Mar.');
+  add('lodging', 'Serviced apartments, 15 nights', lodging * .8, lodging, lodging * 1.3, 'rough',
+    `${beds} bedrooms × $${perBedroom.toLocaleString()} per bedroom for the trip ÷ ${N} adults. Bedroom-night ≈ half a 2BR apartment: Beijing $150, Shanghai $160, Xi'an/Suzhou $85, Nanjing $95.`);
+  add('guides', 'Private guides', guideDays * GUIDE_DAY / N * .8, guideDays * GUIDE_DAY / N, guideDays * GUIDE_DAY / N * 1.25, 'est',
+    `${guideDays} guide-days (transfer days need two) × $${GUIDE_DAY} ÷ ${N}. Published day rates ¥600–1,000 + ~20% peak season.`);
+  add('guides', 'Private van + driver', vanDays * VAN_DAY / N * .8, vanDays * VAN_DAY / N, vanDays * VAN_DAY / N * 1.25, 'rough',
+    `${vanDays} van-days × $${VAN_DAY} ÷ ${N}. A 12–17-seat minibus for ${N} adults, Florence and luggage.`);
+  add('guides', 'Agency service fee', agencyBase * .10, agency, agencyBase * .20, 'rough',
+    `~15% (range 10–20%) on what the agency books: lodging, guides, vans, trains, tickets.`);
+  add('meals', 'Meals', meals * .8, meals, meals * 1.3, 'est',
+    `$45/day in Beijing & Shanghai, $32–35 elsewhere, + ~$85 of specials (Peking duck, dumpling banquet, farewell banquet in a private room).`);
+  add('trains', 'High-speed trains, maglev, luggage courier', cny(550 + 600 + 130 + 40 + 50) + 25, trainsRail, trainsRail + 25, 'firm',
+    `1st class on the long legs: Beijing–Xi'an ¥860, Xi'an–Nanjing ¥950; 2nd class Nanjing–Suzhou ¥130, Suzhou–Shanghai ¥40; maglev ¥50; ~$25 bag courier. Low = all 2nd class.`);
+  add('trains', 'DiDi, metro & taxis on free time', 50, local, 120, 'est', '~$5/day. Metro rides are ¥3–6; most cross-town DiDi trips ¥15–60.');
+  add('tickets', 'Entrance tickets & experiences', tickets * .88, tickets, tickets + cny(550), 'firm',
+    `¥${CITIES.reduce((s, c) => s + c.tickets, 0).toLocaleString()} for everything on the itinerary (see By city). High adds the Huashan day (~¥550 with cable cars + train).`);
+  add('misc', 'Visa', 155, 200, 225, 'firm', 'China L visa: $140 if applied for by Dec 31, 2026, $185 after; + ~$15 photos/postage. 10-year multiple-entry.');
+  add('misc', 'Travel insurance (with medical evacuation)', 250, 450, 700, 'est', 'Comprehensive plans run ~5–11% of trip cost, rising with age.');
+  add('misc', 'Tips for guides & drivers', tips * .7, tips, tips * 1.4, 'est', `~¥150/day guide + ¥75/day driver, per group, × 16 days ÷ ${N}.`);
+  add('misc', 'Travel eSIM', 15, 30, 55, 'firm', '15–20 days of data that works around the firewall (Airalo/Holafly tier).');
+  const inCountry = L.filter(l => !['flights', 'misc'].includes(l.cat) || l.name.startsWith('Tips'));
+  const cushion = CUSHION * inCountry.reduce((s, l) => s + l.mid, 0);
+  add('cushion', '20% cushion on in-country costs', 0, cushion, 0, 'est',
+    'Japan 2026 came in 15% over its estimate. Covers the things nobody itemizes: snacks, water, small admissions, lockers, souvenirs.');
+  const byCat = CATS.map(c => ({ ...c, v: L.filter(l => l.cat === c.id).reduce((s, l) => s + l.mid, 0) }));
+  const total = L.reduce((s, l) => s + l.mid, 0);
+  const lo = L.reduce((s, l) => s + l.lo, 0), hi = L.reduce((s, l) => s + l.hi, 0);
+  const pkg = (lodging + guides + trainsRail + tickets + agency) / 15;
+  const cityRows = CITIES.map(c => {
+    const lod = c.nights * c.bed * beds / N, gv = (c.guide * GUIDE_DAY + c.van * VAN_DAY) / N, tk = cny(c.tickets), ml = c.nights * c.meal;
+    return { ...c, lod, gv, tk, ml, tot: lod + gv + tk + ml, perDay: (lod + gv + tk + ml) / c.nights };
+  });
+  return { N, L, byCat, total, lo, hi, pkg, cityRows, trainsRail, cushion };
+}
+
+/* ---------------- rendering ---------------- */
+const tip = document.getElementById('tip');
+function showTip(e, html) { tip.innerHTML = html; tip.style.opacity = 1; moveTip(e); }
+function moveTip(e) {
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8), y = Math.min(e.clientY + 14, innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hideTip() { tip.style.opacity = 0; }
+
+function donut(m) {
+  const R = 150, r = 98, cx = 170, cy = 170, gap = 0.012;     // gap in radians ≈ 2px surface spacer
+  const segs = m.byCat.filter(c => c.v > 0);
+  let a = -Math.PI / 2, paths = '';
+  const pt = (rad, ang) => [cx + rad * Math.cos(ang), cy + rad * Math.sin(ang)];
+  segs.forEach((c, i) => {
+    const sweep = c.v / m.total * Math.PI * 2;
+    const a0 = a + gap / 2, a1 = a + sweep - gap / 2;
+    const large = a1 - a0 > Math.PI ? 1 : 0;
+    const [x0, y0] = pt(R, a0), [x1, y1] = pt(R, a1), [x2, y2] = pt(r, a1), [x3, y3] = pt(r, a0);
+    const fill = c.neutral ? 'url(#hatch)' : c.c;
+    paths += `<path data-i="${i}" d="M${x0},${y0} A${R},${R} 0 ${large} 1 ${x1},${y1} L${x2},${y2} A${r},${r} 0 ${large} 0 ${x3},${y3} Z" fill="${fill}"/>`;
+    a += sweep;
+  });
+  const el = document.getElementById('donut');
+  el.innerHTML = `<svg viewBox="0 0 340 340"><defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#D9D2C5"/><line x1="0" y1="0" x2="0" y2="7" stroke="#A39A8A" stroke-width="3"/></pattern></defs>${paths}</svg>` +
+    `<div class="donut-center"><span class="v">${fmt(m.total)}</span><span class="l">per adult, all-in<br>(${m.N} adults sharing)</span></div>`;
+  el.querySelectorAll('path').forEach(p => {
+    const c = segs[+p.dataset.i];
+    const html = `<b>${c.name}</b><div class="r"><span>Per adult</span><span>${fmt(c.v)}</span></div><div class="r"><span>Share</span><span>${Math.round(c.v / m.total * 100)}%</span></div><div class="r"><span>Whole group (${m.N})</span><span>${fmt(c.v * m.N)}</span></div>`;
+    p.addEventListener('mouseenter', e => { highlight(c.id); showTip(e, html); });
+    p.addEventListener('mousemove', moveTip);
+    p.addEventListener('mouseleave', () => { highlight(null); hideTip(); });
+  });
+  const lg = document.getElementById('legend');
+  lg.innerHTML = segs.map(c => `<li data-id="${c.id}"><span class="sq" style="--c:${c.neutral ? '#B7AE9F' : c.c};${c.neutral ? 'background:repeating-linear-gradient(45deg,#D9D2C5 0 3px,#A39A8A 3px 5px)' : ''}"></span><span>${c.name}</span><span class="amt">${fmt(c.v)}</span><span class="pct">${Math.round(c.v / m.total * 100)}%</span></li>`).join('');
+  lg.querySelectorAll('li').forEach(li => {
+    li.addEventListener('mouseenter', () => highlight(li.dataset.id));
+    li.addEventListener('mouseleave', () => highlight(null));
+  });
+  function highlight(id) {
+    const ids = segs.map(s => s.id);
+    el.querySelectorAll('path').forEach(p => p.classList.toggle('dim', id !== null && ids[+p.dataset.i] !== id));
+    lg.querySelectorAll('li').forEach(li => li.classList.toggle('hot', li.dataset.id === id));
+  }
+}
+
+function render(N) {
+  const m = model(N);
+  const inCountry = m.total - m.byCat.find(c => c.id === 'flights').v;
+  document.getElementById('stats').innerHTML = [
+    ['Plan on, per adult', fmt(m.total), 'everything, incl. flights &amp; the 20% cushion'],
+    ['Plausible range', `${fmt(Math.round(m.lo / 100) * 100)}–${fmt(Math.round(m.hi / 100) * 100)}`, 'all lows vs. all highs'],
+    ['Per adult per day', fmt(m.total / 15), 'across 15 nights'],
+    ['Whole group', fmt(m.total * N), `${N} adults (Florence not included)`],
+  ].map(([k, v, s]) => `<div class="stat"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join('');
+  donut(m);
+  document.getElementById('pkgline').textContent = fmt(m.pkg);
+  const conf = { firm: '<span class="conf firm">published</span>', est: '<span class="conf est">estimate</span>', rough: '<span class="conf rough">rough</span>' };
+  let rows = '<tr><th>Item</th><th class="n">Low</th><th class="n">Estimate</th><th class="n">High</th><th>How firm · arithmetic</th></tr>';
+  CATS.forEach(c => {
+    const items = m.L.filter(l => l.cat === c.id);
+    if (!items.length) return;
+    const s = k => items.reduce((t, l) => t + l[k], 0);
+    const dash = v => c.neutral ? '—' : fmt(v);
+    rows += `<tr class="cat"><td><span class="sq" style="width:13px;height:13px;border-radius:4px;display:inline-block;background:${c.neutral ? 'repeating-linear-gradient(45deg,#D9D2C5 0 3px,#A39A8A 3px 5px)' : c.c}"></span>${c.name}</td><td class="n">${dash(s('lo'))}</td><td class="n">${fmt(s('mid'))}</td><td class="n">${dash(s('hi'))}</td><td>${items.length === 1 ? conf[items[0].conf] + ' <span class="note">' + items[0].note + '</span>' : ''}</td></tr>`;
+    if (items.length > 1) items.forEach(l => {
+      rows += `<tr class="sub"><td>${l.name}</td><td class="n">${fmt(l.lo)}</td><td class="n">${fmt(l.mid)}</td><td class="n">${fmt(l.hi)}</td><td>${conf[l.conf]} <span class="note">${l.note}</span></td></tr>`;
+    });
+  });
+  rows += `<tr class="tot"><td>Total per adult</td><td class="n">${fmt(m.lo)}</td><td class="n">${fmt(m.total)}</td><td class="n">${fmt(m.hi)}</td><td class="note">Low and high are the plausible spread of the pieces themselves, without the cushion. The cushion is what lets the estimate absorb a run of high rows.</td></tr>`;
+  document.getElementById('lines').innerHTML = rows;
+
+  let cr = '<tr><th>Stop</th><th class="n">Nights</th><th class="n">Lodging</th><th class="n">Guide &amp; van</th><th class="n">Tickets</th><th class="n">Meals</th><th class="n">Total</th><th class="n">Per day</th><th>What the tickets cover</th></tr>';
+  m.cityRows.forEach(c => {
+    cr += `<tr><td><b>${c.name}</b></td><td class="n">${c.nights}</td><td class="n">${fmt(c.lod)}</td><td class="n">${fmt(c.gv)}</td><td class="n">${fmt(c.tk)}</td><td class="n">${fmt(c.ml)}</td><td class="n"><b>${fmt(c.tot)}</b></td><td class="n">${fmt(c.perDay)}</td><td class="note">${c.tnote}</td></tr>`;
+  });
+  const sum = k => m.cityRows.reduce((t, c) => t + c[k], 0);
+  cr += `<tr class="sub"><td>Trains between cities, maglev, couriers</td><td></td><td></td><td></td><td></td><td></td><td class="n">${fmt(m.trainsRail)}</td><td></td><td class="note">Departure-day meals and specials, tips, agency fee and local transport aren't split by city.</td></tr>`;
+  cr += `<tr class="tot"><td>In-country, by city</td><td class="n">15</td><td class="n">${fmt(sum('lod'))}</td><td class="n">${fmt(sum('gv'))}</td><td class="n">${fmt(sum('tk'))}</td><td class="n">${fmt(sum('ml'))}</td><td class="n">${fmt(sum('tot') + m.trainsRail)}</td><td class="n">${fmt((sum('tot') + m.trainsRail) / 15)}</td><td></td></tr>`;
+  document.getElementById('cities').innerHTML = cr;
+}
+
+document.getElementById('groupseg').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  document.querySelectorAll('#groupseg button').forEach(x => x.classList.toggle('on', x === b));
+  render(+b.dataset.n);
+});
+render(7);
+
+/* ---------------- the countdown ---------------- */
+// kind: free = no commitment, decide = decision point, task = booking / to-do
+const PLANS = {
+  jun: { label: 'June 2027', items: [
+    ['free', 'Now – January', 'Soft yes &amp; headcount', 'Nothing to buy. Agree it\'s worth pursuing, get a rough headcount, and ask 2–3 agencies for free quotes on this itinerary. Everyone checks their passport: it needs <b>6+ months of validity past the trip</b> and two blank pages (routine renewals take ~4–6 weeks).'],
+    ['task', 'By Dec 31, 2026', 'Optional: lock in the cheaper visa fee', 'China\'s reduced <b>$140</b> visa fee for Americans ends Dec 31; from January it\'s <b>$185</b>. The visa is good for 10 years, so anyone fairly sure they\'ll go can apply now and save $45.'],
+    ['free', 'January – February', 'Compare quotes, watch fares', 'Pick an agency (still no deposit). Set Google Flights price alerts for SFO/DEN → Beijing, Shanghai → home.'],
+    ['decide', 'Early March 2027', 'Decision point: final yes, book flights', '<b>~14 weeks out.</b> Final headcount; everyone books flights (standard economy, not basic); pay the agency\'s refundable 10% deposit. US→China summer fares are usually cheapest around now, and waiting to April–May risks a few hundred dollars more per ticket.'],
+    ['task', 'Within ~2 weeks of paying', 'Travel insurance', 'Buying soon after your first trip payment is what unlocks pre-existing-condition coverage on most plans.'],
+    ['task', 'March – April', 'Agency books lodging', 'Apartments and hotels confirmed; itinerary details tuned (which split-day options, which restaurant nights).'],
+    ['task', 'April (~2 months out)', 'Visas &amp; travel clinic', 'Visa applications if not already done (online, then submitted at the consulate). Travel-clinic visit for Hep A and routine boosters.'],
+    ['task', 'May (~30 days out)', 'Agency balance due', 'The real point of no return (China Highlights: full refund until 22 days out).'],
+    ['task', '2–4 weeks out', 'Phone kit', 'Everyone installs and verifies Alipay/WeChat Pay, DiDi and Trip.com, orders a travel eSIM, downloads offline translation packs. One family video call to walk through it together.'],
+    ['task', '15 days out', 'Train tickets go on sale', 'Agency books every seat the minute the window opens.'],
+    ['task', '7 days out', 'Timed tickets released', 'Forbidden City (8pm Beijing time, 7 days ahead) and Terracotta Army slots, booked against our passports. Note: the Dragon Boat holiday falls around Wed June 9, 2027; the agency routes the big sights around it.'],
+    ['task', 'Before landing', 'Arrival card', 'Quick online arrival form. Then: 飞机去中国 — wheels up. 🎉'],
+  ]},
+  aug: { label: 'Late August 2027', items: [
+    ['free', 'Now – March', 'No rush', 'Same free steps (quotes, passports), with three extra months of slack. The Dec 31 visa-fee deadline still applies if anyone wants it.'],
+    ['decide', 'Late May 2027', 'Decision point: final yes, book flights', '~13 weeks out. Book flights and pay the agency deposit. August is peak season for Chinese domestic travel, so hotels and trains are pricier and fuller than in June.'],
+    ['task', 'June – July', 'Insurance, lodging, visas', 'Same sequence as the June plan, shifted ~11 weeks later. Watch for Beijing closures around the Aug 1 PLA centenary. A parade would mostly disrupt mid-July to early August.'],
+    ['task', '15 / 7 days out', 'Trains &amp; timed tickets', 'Chinese summer vacation runs to ~Aug 31, so these sell out faster than in June. Lean on the agency.'],
+  ]},
+  sep: { label: 'Early September 2027', items: [
+    ['free', 'Now – April', 'No rush', 'Same free steps, with four extra months of slack.'],
+    ['decide', 'Mid-June 2027', 'Decision point: final yes, book flights', '~12 weeks out. Fly home before the Mid-Autumn holiday (Wed Sept 15, 2027), and well before October\'s Golden Week (Oct 1–7).'],
+    ['task', 'July – August', 'Insurance, lodging, visas', 'Same sequence as the June plan, shifted ~13 weeks later. Hotels are noticeably cheaper than in August.'],
+    ['task', '15 / 7 days out', 'Trains &amp; timed tickets', 'Schools are back in session, so these are the easiest of the three windows.'],
+  ]},
+};
+function renderTl(p) {
+  document.getElementById('tl').innerHTML = PLANS[p].items.map(([k, when, title, what]) =>
+    `<div class="tl-item ${k}"><div class="when">${when} <small>${title}</small></div><div class="what">${what}</div></div>`).join('');
+}
+document.getElementById('planseg').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  document.querySelectorAll('#planseg button').forEach(x => x.classList.toggle('on', x === b));
+  renderTl(b.dataset.p);
+});
+renderTl(location.hash === '#aug' ? 'aug' : location.hash === '#sep' ? 'sep' : 'jun');
+</script>
+</body>
+</html>
