@@ -47,11 +47,11 @@ def big_version(slot, idx, meta):
 WIDTH = {"banner": 1800, "wide": 1400, "tile": 800}
 LABEL = {
     "hero": "Great Wall at Mutianyu", "beijing": "Forbidden City", "xian": "Terracotta Army",
-    "nanjing": "Sun Yat-sen Mausoleum", "suzhou": "Suzhou", "shanghai": "Shanghai skyline",
-    "hangzhou": "West Lake", "chengdu": "Giant panda", "bj-heaven": "Temple of Heaven",
+    "nanjing": "Sun Yat-sen Mausoleum", "suzhou": "Humble Administrator's Garden", "shanghai": "Shanghai skyline",
+    "hangzhou": "Leifeng Pagoda, West Lake", "chengdu": "Giant panda", "bj-heaven": "Temple of Heaven",
     "bj-summer": "Summer Palace", "bj-hutong": "Beijing hutong", "bj-forbidden": "Forbidden City",
     "xa-wall": "Xi'an city wall", "xa-pagoda": "Big Wild Goose Pagoda", "xa-huashan": "Mount Hua",
-    "xa-muslim": "Xi'an Muslim Quarter", "nj-palace": "Presidential Palace", "nj-ming": "Ming Xiaoling",
+    "xa-muslim": "Xi'an Bell Tower by night", "nj-palace": "Presidential Palace", "nj-ming": "Ming Xiaoling",
     "nj-qinhuai": "Qinhuai River", "sz-nets": "Master of the Nets Garden", "sz-museum": "Suzhou Museum",
     "sz-canal": "Suzhou canal", "sh-yu": "Yu Garden", "sh-bund": "The Bund", "sh-tower": "Shanghai Tower",
     "sh-french": "French Concession", "hz-lingyin": "Lingyin Temple", "hz-tea": "Longjing tea fields",
@@ -89,7 +89,7 @@ def main():
             im = big_version(slot, p["idx"], meta) or im
         im = crop(im, spec["shape"], p.get("x", 0.5), p.get("y", meta.get("focus_y") or 0.5))
         kind = "banner" if spec["shape"] >= 3 else "wide" if spec["shape"] >= 2 else "tile"
-        tw = min(WIDTH[kind], im.size[0])
+        tw = min(1920 if slot == "hero" else WIDTH[kind], im.size[0])
         im = im.resize((tw, int(tw / spec["shape"])), PIL.Image.LANCZOS)
         im.save(out / ("%s.jpg" % slot), "JPEG", quality=84, optimize=True, progressive=True)
         credits[slot] = {

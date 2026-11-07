@@ -1,0 +1,242 @@
+{
+ "hero": {
+  "what": "Great Wall at Mutianyu",
+  "author": "Velatrix",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG",
+  "source": "commons",
+  "title": "File:Great Wall of China July 2006.JPG"
+ },
+ "beijing": {
+  "what": "Forbidden City",
+  "author": "Pixelflake",
+  "licence": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg",
+  "source": "commons",
+  "title": "File:The Forbidden City - View from Coal Hill.jpg"
+ },
+ "xian": {
+  "what": "Terracotta Army",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
+  "source": "commons",
+  "title": "File:51714-Terracota-Army.jpg"
+ },
+ "nanjing": {
+  "what": "Sun Yat-sen Mausoleum",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sun_Yat-sen_Mausoleum_-_54400198691.jpg",
+  "source": "commons",
+  "title": "File:Sun Yat-sen Mausoleum - 54400198691.jpg"
+ },
+ "suzhou": {
+  "what": "Humble Administrator's Garden",
+  "author": "King of Hearts",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_November_2017_008.jpg",
+  "source": "commons",
+  "title": "File:Humble Administrator's Garden Suzhou November 2017 008.jpg"
+ },
+ "shanghai": {
+  "what": "Shanghai skyline",
+  "author": "Larry Qian",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shanghai_Lujiazui_night_skyline_2017_-_Flickr.jpg",
+  "source": "commons",
+  "title": "File:Shanghai Lujiazui night skyline 2017 - Flickr.jpg"
+ },
+ "hangzhou": {
+  "what": "Leifeng Pagoda, West Lake",
+  "author": "lienyuan lee",
+  "licence": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_%E9%9B%B7%E5%B3%B0%E5%A1%94_-_panoramio.jpg",
+  "source": "commons",
+  "title": "File:Leifeng Pagoda 雷峰塔 - panoramio.jpg"
+ },
+ "chengdu": {
+  "what": "Giant panda",
+  "author": "George Lu",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg",
+  "source": "commons",
+  "title": "File:Panda in Chengdu Research Base of Giant Panda Breeding - 7708872342.jpg"
+ },
+ "bj-heaven": {
+  "what": "Temple of Heaven",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests_03.jpg",
+  "source": "commons",
+  "title": "File:Temple of Heaven - Hall of Prayer for Good Harvests 03.jpg"
+ },
+ "bj-summer": {
+  "what": "Summer Palace",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Longevity_Hill_of_the_Summer_Palace.jpg",
+  "source": "commons",
+  "title": "File:Longevity Hill of the Summer Palace.jpg"
+ },
+ "bj-hutong": {
+  "what": "Beijing hutong",
+  "author": "Renek78",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Some_Hutong_in_Beijing_in_2026_-_1.jpg",
+  "source": "commons",
+  "title": "File:Some Hutong in Beijing in 2026 - 1.jpg"
+ },
+ "bj-forbidden": {
+  "what": "Forbidden City",
+  "author": "N509FZ",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hall_of_Supreme_Harmony_and_Mid_L-R_gates_(20241127120000).jpg",
+  "source": "commons",
+  "title": "File:Hall of Supreme Harmony and Mid L-R gates (20241127120000).jpg"
+ },
+ "xa-wall": {
+  "what": "Xi'an city wall",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:City_wall_of_Xi%27an_51550-Xian_(27959363326).jpg",
+  "source": "commons",
+  "title": "File:City wall of Xi'an 51550-Xian (27959363326).jpg"
+ },
+ "xa-pagoda": {
+  "what": "Big Wild Goose Pagoda",
+  "author": "Gary Todd from Xinzheng, China",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dayan_%22Big_Wild_Goose%22_Pagoda_(9911539764).jpg",
+  "source": "commons",
+  "title": "File:Dayan \"Big Wild Goose\" Pagoda (9911539764).jpg"
+ },
+ "xa-huashan": {
+  "what": "Mount Hua",
+  "author": "Alexey Komarov",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mount_Hua,_May,_2018-1.jpg",
+  "source": "commons",
+  "title": "File:Mount Hua, May, 2018-1.jpg"
+ },
+ "xa-muslim": {
+  "what": "Xi'an Bell Tower by night",
+  "author": "H2v5o68z",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Xi%27an_Bell_Tower_at_night_1.jpg",
+  "source": "commons",
+  "title": "File:Xi'an Bell Tower at night 1.jpg"
+ },
+ "nj-palace": {
+  "what": "Presidential Palace",
+  "author": "钉钉",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Main_gate_of_the_Presidential_Palace,_Nanjing_1.jpg",
+  "source": "commons",
+  "title": "File:Main gate of the Presidential Palace, Nanjing 1.jpg"
+ },
+ "nj-ming": {
+  "what": "Ming Xiaoling",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ming_Xiaoling_Mausoleum_(54437036887).jpg",
+  "source": "commons",
+  "title": "File:Ming Xiaoling Mausoleum (54437036887).jpg"
+ },
+ "nj-qinhuai": {
+  "what": "Qinhuai River",
+  "author": "SQFP",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Qinhuai_River_Night.jpg",
+  "source": "commons",
+  "title": "File:Qinhuai River Night.jpg"
+ },
+ "sz-nets": {
+  "what": "Master of the Nets Garden",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Master_of_the_Nets_Garden_Suzhou.jpg",
+  "source": "commons",
+  "title": "File:Master of the Nets Garden Suzhou.jpg"
+ },
+ "sz-museum": {
+  "what": "Suzhou Museum",
+  "author": "livepine",
+  "licence": "CC BY 2.0",
+  "page": "https://www.flickr.com/photos/75275041@N00/4711755586",
+  "source": "openverse/flickr",
+  "title": "苏州博物馆大堂 / Great Hall, Suzhou Museum"
+ },
+ "sz-canal": {
+  "what": "Suzhou canal",
+  "author": "King of Hearts",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Suzhou_canals_November_2017_007.jpg",
+  "source": "commons",
+  "title": "File:Suzhou canals November 2017 007.jpg"
+ },
+ "sh-yu": {
+  "what": "Yu Garden",
+  "author": "Stefan Fussan",
+  "licence": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shanghai_-_Yu_Garden_-_0035.jpg",
+  "source": "commons",
+  "title": "File:Shanghai - Yu Garden - 0035.jpg"
+ },
+ "sh-bund": {
+  "what": "The Bund",
+  "author": "Gary Todd",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:2015_The_Bund,_Shanghai-_Hong_Kong_and_Shanghai_Bank,_1923_(left)_%26_Customs_House,_1927_(right).jpg",
+  "source": "commons",
+  "title": "File:2015 The Bund, Shanghai- Hong Kong and Shanghai Bank, 1923 (left) & Customs House, 1927 (right).jpg"
+ },
+ "sh-tower": {
+  "what": "Shanghai Tower",
+  "author": "Ermell",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Shanghai_skyscrapers_5166285.jpg",
+  "source": "commons",
+  "title": "File:Shanghai skyscrapers 5166285.jpg"
+ },
+ "sh-french": {
+  "what": "French Concession",
+  "author": "RunningTurtle8964",
+  "licence": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wukang_Road_in_2025.jpg",
+  "source": "commons",
+  "title": "File:Wukang Road in 2025.jpg"
+ },
+ "hz-lingyin": {
+  "what": "Lingyin Temple",
+  "author": "Jakub Hałun",
+  "licence": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20090608_Hangzhou_Feilai_Feng_9060.jpg",
+  "source": "commons",
+  "title": "File:20090608 Hangzhou Feilai Feng 9060.jpg"
+ },
+ "hz-tea": {
+  "what": "Longjing tea fields",
+  "author": "Wishva de Silva",
+  "licence": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tea_plantations_in_Longjing,_Hangzhou.jpg",
+  "source": "commons",
+  "title": "File:Tea plantations in Longjing, Hangzhou.jpg"
+ },
+ "cd-sanxingdui": {
+  "what": "Sanxingdui bronze",
+  "author": "Gary Todd",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_10.jpg",
+  "source": "commons",
+  "title": "File:Ancient Bronze Mask from Sanxingdui 10.jpg"
+ },
+ "cd-dujiangyan": {
+  "what": "Dujiangyan",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dujiangyan_Scenic_Area_36666-Dujiangyan_(49067677318).jpg",
+  "source": "commons",
+  "title": "File:Dujiangyan Scenic Area 36666-Dujiangyan (49067677318).jpg"
+ }
+}
