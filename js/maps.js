@@ -14,7 +14,7 @@ const LP = 'https://www.lonelyplanet.com/points-of-interest/';
 const SIGHTS = {
   beijing: {
     core: [[116.26, 39.87], [116.49, 40.01]],
-    wide: [[116.24, 39.84], [116.62, 40.47]],
+    wide: [[116.24, 39.84], [117.30, 40.72]],
     wideLabel: 'Incl. Great Wall',
     pts: [
       ['Forbidden City', 116.3908, 39.9158, 'main', 'Day 2', 'The emperors\' palace: 980 buildings, 600 years of history.', W + 'Forbidden_City', TCG + '/cityguides/beijing/forbidden.htm', LP + 'forbidden-city/368617'],
@@ -29,6 +29,9 @@ const SIGHTS = {
       ['798 Art District', 116.4879, 39.9891, 'opt', 'Day 5', 'Galleries in a Bauhaus-era factory complex.', W + '798_Art_Zone', TCG + '/attraction/beijing/798-art-zone.htm', LP + '798-art-district/1106265'],
       ['Military Museum', 116.3177, 39.9077, 'opt', 'Day 5', 'Tanks, jets and missiles in a Soviet-style palace.', W + "Military_Museum_of_the_Chinese_People's_Revolution", TCG + '/attraction/beijing/military-museum.htm', LP + 'military-museum-of-the-peoples-revolution/368835'],
       ['China Science & Technology Museum', 116.3922, 40.0047, 'opt', 'Day 5', 'Huge hands-on science museum by the Olympic Park.', W + 'China_Science_and_Technology_Museum', TCG + '/attraction/beijing/science-technology-museum.htm', null],
+      ['Jinshanling Great Wall', 117.2444, 40.6764, 'opt', 'Day 3 alt', '~2½ hrs out. Quieter, partly wild wall for a real tower-to-tower hike.', W + 'Jinshanling', null, null],
+      ['Panjiayuan Market', 116.4605, 39.8726, 'opt', 'Day 5', 'Antiques, curios and Cultural Revolution kitsch; best on weekend mornings.', W + 'Panjiayuan', null, null],
+      ['Sanlitun', 116.4489, 39.9361, 'food', 'Day 5 eve', 'Bars, restaurants and futuristic shopping for night owls.', W + 'Sanlitun', null, null],
       ['Beijing West Station', 116.3221, 39.8949, 'go', 'Day 6', 'Bullet train to Xi\'an.', null, null, null],
     ],
   },
@@ -93,6 +96,32 @@ const SIGHTS = {
       ['Hongqiao Station', 121.3161, 31.1963, 'go', 'Day 13', 'Train in from Suzhou.', null, null, null],
     ],
   },
+  chengdu: {
+    core: [[104.00, 30.62], [104.16, 30.75]],
+    wide: [[103.28, 29.47], [104.50, 31.06]],
+    wideLabel: 'Day trips (Leshan, Emei, Dujiangyan…)',
+    pts: [
+      ['Wuhou Shrine', 104.0478, 30.6463, 'main', 'Day 16', 'Temple to the heroes of the Three Kingdoms.', null, TCG + '/attraction/sichuan/chengdu/wuhou_temple.htm', LP + 'wuhou-temple/472744'],
+      ['Jinli Ancient Street', 104.0474, 30.6485, 'food', 'Day 16 eve', 'Lantern-lit snack street next to the Wuhou Shrine.', W + 'Jinli', TCG + '/attraction/sichuan/chengdu/jinli-street.htm', null],
+      ['Giant Panda Base', 104.1419, 30.7386, 'main', 'Day 17', 'Be there at opening: pandas are busiest at breakfast.', W + 'Chengdu_Research_Base_of_Giant_Panda_Breeding', TCG + '/attraction/sichuan/chengdu/panda-breeding-and-research-center.htm', LP + 'giant-panda-breeding-research-base/472728'],
+      ['Wenshu Monastery', 104.0790, 30.6813, 'main', 'Day 17', 'Working Buddhist monastery with a vegetarian canteen and teahouse.', W + 'Wenshu_Temple_(Chengdu)', TCG + '/attraction/sichuan/chengdu/wenshu_monastery.htm', LP + 'wenshu-monastery/472742'],
+      ['Sichuan opera at Shufeng Yayun', 104.0410, 30.6612, 'main', 'Day 17 eve', 'Face-changing, fire-spitting, puppetry: a variety show of an opera.', W + 'Sichuan_opera', null, LP + 'culture-park/1240357'],
+      ['Qingyang Palace', 104.0428, 30.6620, 'opt', 'Day 17', "Chengdu's oldest Taoist temple, next to the opera.", null, TCG + '/attraction/sichuan/chengdu/qingyang.htm', LP + 'qingyang-temple/472730'],
+      ["People's Park & Heming Teahouse", 104.0549, 30.6595, 'main', 'Day 19', 'Bamboo chairs, jasmine tea, professional ear-cleaners.', W + "People's_Park_(Chengdu)", TCG + '/attraction/sichuan/chengdu/peoples-park.htm', LP + 'he-ming-teahouse/1240739'],
+      ['Kuanzhai Xiangzi', 104.0560, 30.6639, 'food', 'Day 19', 'The restored Qing-era "Wide and Narrow Alleys".', null, TCG + '/attraction/sichuan/chengdu/wide-narrow-alley.htm', null],
+      ['Taikoo Li & Daci Temple', 104.0806, 30.6557, 'food', 'Day 19', 'Open-air shopping district wrapped around a Tang-era temple.', W + 'Taikoo_Li_Chengdu', null, null],
+      ['Jinsha Site Museum', 104.0126, 30.6812, 'opt', 'Day 20', 'Home of the 3,000-year-old golden Sun Bird disc (check reopening).', W + 'Jinsha_site', TCG + '/attraction/sichuan/chengdu/jinsha-site-museum.htm', LP + 'jinsha-site-museum/1240326'],
+      ['Sanxingdui Museum', 104.2182, 31.0031, 'main', 'Day 20', '20 min by train + taxi. Bronze masks of a lost Bronze Age kingdom.', W + 'Sanxingdui_Museum', TCG + '/attraction/sichuan/chengdu/sanxingdui.htm', LP + 'sanxingdui-museum/1240890'],
+      ['Dujiangyan', 103.6053, 31.0017, 'main', 'Day 21', '25 min by train. A 2,300-year-old irrigation system that still works.', W + 'Dujiangyan', TCG + '/attraction/sichuan/chengdu/dujiangyan.htm', LP + 'dujiangyan-irrigation-system/1240916'],
+      ['Dujiangyan Panda Valley', 103.5900, 31.0500, 'opt', 'Day 21 swap', 'Hillside wild-release training center, far fewer crowds.', null, TCG + '/attraction/sichuan/chengdu/dujiangyan-panda-valley.htm', null],
+      ['Mount Qingcheng', 103.5578, 30.9105, 'main', 'Day 21', 'Forested Taoist mountain, one of the birthplaces of Taoism.', W + 'Mount_Qingcheng', TCG + '/attraction/sichuan/chengdu/mt_qingcheng.htm', LP + 'mt-qingcheng/1240901'],
+      ['Leshan Giant Buddha', 103.7733, 29.5447, 'main', 'Day 18', '35–50 min by bullet train. The largest stone Buddha in the world.', W + 'Leshan_Giant_Buddha', TCG + '/attraction/sichuan/leshan/buddha_statue.htm', LP + 'leshan-grand-buddha/1241166'],
+      ['Mount Emei', 103.3325, 29.5197, 'opt', 'Day 18–19 option', 'Sacred Buddhist mountain; overnight for the Golden Summit sunrise.', W + 'Mount_Emei', TCG + '/attraction/sichuan/leshan/mt_emei.htm', null],
+      ['Huanglongxi Ancient Town', 103.9707, 30.3178, 'opt', 'Spare day', '1,700-year-old riverside town, 1–1½ hrs south.', W + 'Huanglongxi', TCG + '/attraction/sichuan/chengdu/huanglongxi-ancient-town.htm', null],
+      ['Chengdu East Station', 104.1418, 30.6296, 'go', 'Day 18 / Option B', "Trains to Leshan, and in from Xi'an.", null, null, null],
+      ['Tianfu Airport (TFU)', 104.4450, 30.3197, 'go', 'Days 16 & 22', 'Flights in from Shanghai and home.', null, null, null],
+    ],
+  },
 };
 
 // Route map: cities + rail legs (waypoints follow the actual high-speed lines' major stops).
@@ -105,7 +134,7 @@ const ROUTE = {
     ['Suzhou', 120.6194, 31.3000, 'main', 'Days 12–13', 'Classical gardens · canals', '#city-suzhou', 'top'],
     ['Shanghai', 121.4692, 31.2325, 'main', 'Days 13–16', 'The Bund · Yu Garden · Shanghai Tower', '#city-shanghai', 'right'],
     ['Hangzhou', 120.1530, 30.2670, 'ext', 'Week 3 option', 'West Lake · tea country · Song dynasty', '#extensions', 'bottom'],
-    ['Chengdu', 104.0633, 30.6600, 'ext2', 'Week 3 option', 'Pandas · Sanxingdui · Sichuan food', '#extensions', 'right'],
+    ['Chengdu', 104.0633, 30.6600, 'ext2', 'Week 3 option', 'Pandas · Leshan Buddha · Sichuan opera', 'chengdu.html', 'right'],
   ],
   legs: [
     { kind: 'rail', label: 'HSR · 4½ h', at: [114.1, 37.0], coords: [[116.3221, 39.8949], [115.46, 38.87], [114.51, 38.0425], [114.49, 36.61], [113.684, 34.764], [112.4539, 34.6197], [108.9341, 34.3776]] },
@@ -113,11 +142,12 @@ const ROUTE = {
     { kind: 'rail', label: '1 h', at: [119.75, 32.15], minZoom: 6.3, coords: [[118.7985, 31.9688], [119.424, 32.188], [119.974, 31.811], [120.057, 31.549], [120.611, 31.330]] },
     { kind: 'rail', label: '25 min', at: [121.0, 31.05], minZoom: 6.8, coords: [[120.611, 31.330], [121.3161, 31.1963]] },
     { kind: 'ext', label: 'HSR · 1 h', at: [120.95, 30.62], minZoom: 6.3, coords: [[121.3161, 31.1963], [120.75, 30.75], [120.2084, 30.2935]] },
+    { kind: 'ext2rail', label: "or HSR from Xi'an · 3½ h", at: [106.2, 32.9], coords: [[108.9341, 34.3776], [107.02, 33.07], [105.84, 32.44], [104.68, 31.47], [104.139, 30.631]] },
     { kind: 'fly', label: '✈ 3½ h flight', at: [112.5, 29.9], coords: null, from: [121.8053, 31.1433], to: [104.44, 30.31] },
   ],
 };
 
-const COLORS = { main: '#C13B2A', food: '#C99A3C', opt: '#2E6E62', go: '#5A4F47', ext: '#2E6E62', ext2: '#9C7420' };
+const COLORS = { main: '#C13B2A', food: '#C99A3C', opt: '#2E6E62', go: '#5A4F47', ext: '#2E6E62', ext2: '#9C7420', ext2rail: '#9C7420' };
 const STYLE = 'https://tiles.openfreemap.org/styles/positron';
 const EN = ['coalesce', ['get', 'name:en'], ['get', 'name_en'], ['get', 'name:latin'], ['get', 'name']];
 
@@ -211,6 +241,8 @@ function routeMap(el) {
       layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': COLORS.main, 'line-width': 4.5 } });
     map.addLayer({ id: 'legs-ext', type: 'line', source: 'legs', filter: ['==', ['get', 'kind'], 'ext'],
       layout: { 'line-cap': 'round' }, paint: { 'line-color': COLORS.ext, 'line-width': 3.5, 'line-dasharray': [2, 1.6] } });
+    map.addLayer({ id: 'legs-ext2rail', type: 'line', source: 'legs', filter: ['==', ['get', 'kind'], 'ext2rail'],
+      layout: { 'line-cap': 'round' }, paint: { 'line-color': COLORS.ext2, 'line-width': 3.5, 'line-dasharray': [2, 1.6] } });
     map.addLayer({ id: 'legs-fly', type: 'line', source: 'legs', filter: ['==', ['get', 'kind'], 'fly'],
       layout: { 'line-cap': 'round' }, paint: { 'line-color': COLORS.ext2, 'line-width': 3.5, 'line-dasharray': [0.3, 2.2] } });
   });
@@ -242,7 +274,7 @@ function routeMap(el) {
     const offset = { right: [-8, 0], left: [8, 0], top: [0, 8], bottom: [0, -8] }[side];
     new maplibregl.Marker({ element: el2, anchor, offset }).setLngLat([lng, lat])
       .setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '240px' }).setHTML(
-        `<div class="pop"><span class="pop-when" style="color:${COLORS[kind]}">${esc(days)}</span><b>${esc(name)}</b><p>${esc(blurb)}</p><div class="pop-links"><a href="${href}">Jump to it ↓</a></div></div>`))
+        `<div class="pop"><span class="pop-when" style="color:${COLORS[kind]}">${esc(days)}</span><b>${esc(name)}</b><p>${esc(blurb)}</p><div class="pop-links"><a href="${href}">${href.startsWith('#') ? 'Jump to it ↓' : 'Open the page →'}</a></div></div>`))
       .addTo(map);
   });
   const plane = document.createElement('div');

@@ -56,6 +56,11 @@ LABEL = {
     "sz-canal": "Suzhou canal", "sh-yu": "Yu Garden", "sh-bund": "The Bund", "sh-tower": "Shanghai Tower",
     "sh-french": "French Concession", "hz-lingyin": "Lingyin Temple", "hz-tea": "Longjing tea fields",
     "cd-sanxingdui": "Sanxingdui bronze", "cd-dujiangyan": "Dujiangyan",
+    "cd-leshan": "Leshan Giant Buddha", "cd-jinli": "Jinli Ancient Street", "cd-teahouse": "People's Park teahouse",
+    "cd-opera": "Sichuan opera", "cd-qingcheng": "Mount Qingcheng", "cd-wenshu": "Wenshu Monastery",
+    "cd-kuanzhai": "Kuanzhai Xiangzi", "cd-hotpot": "Sichuan hotpot", "cd-panda2": "Giant panda",
+    "cd-emei": "Mount Emei", "cd-jinsha": "Jinsha gold", "cd-train": "High-speed train",
+    "bj-panjiayuan": "Panjiayuan Market", "bj-jinshanling": "Jinshanling Great Wall",
 }
 
 
@@ -89,7 +94,7 @@ def main():
             im = big_version(slot, p["idx"], meta) or im
         im = crop(im, spec["shape"], p.get("x", 0.5), p.get("y", meta.get("focus_y") or 0.5))
         kind = "banner" if spec["shape"] >= 3 else "wide" if spec["shape"] >= 2 else "tile"
-        tw = min(1920 if slot == "hero" else WIDTH[kind], im.size[0])
+        tw = min(1920 if slot in ("hero", "cd-leshan") else WIDTH[kind], im.size[0])
         im = im.resize((tw, int(tw / spec["shape"])), PIL.Image.LANCZOS)
         im.save(out / ("%s.jpg" % slot), "JPEG", quality=84, optimize=True, progressive=True)
         credits[slot] = {
@@ -110,7 +115,7 @@ def main():
     items = "".join('<li>%s: <a href="%s" target="_blank" rel="noopener">%s</a> · %s</li>' % (
         html.escape(c["what"]), html.escape(c["page"] or "#"), html.escape(c["author"]), html.escape(c["licence"]))
         for c in credits.values())
-    for page in ("index.html", "budget.html"):
+    for page in ("index.html", "budget.html", "chengdu.html"):
         f = ROOT / page
         s = f.read_text("utf8")
         s = re.sub(r'<span class="photo-credit" data-credit="([\w-]+)">.*?</span>', overlay, s)

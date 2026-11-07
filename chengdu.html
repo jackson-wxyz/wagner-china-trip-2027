@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chengdu Week · China 2027</title>
+<meta name="description" content="Warren and Margot's week in Chengdu and Sichuan: pandas, the Leshan Giant Buddha, Sanxingdui, Sichuan opera and teahouse afternoons.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.6.0/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.6.0/maplibre-gl.js" defer></script>
+<script src="js/maps.js" defer></script>
+<style>
+  .trips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:24px}
+  .trip{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(43,35,32,.06)}
+  .trip img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .trip .pad{padding:16px 18px}
+  .trip h3{font-size:1.12rem;margin-bottom:4px}
+  .trip .meta{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verm);margin-bottom:6px}
+  .trip.pick{border:2px solid var(--jade)}
+  .trip.pick .meta{color:var(--jade)}
+  .trip p{font-size:.92rem;color:var(--ink2)}
+  .trip p + p{margin-top:6px}
+  .trip .links{margin-top:8px;font-size:.84rem}
+  .trip .links a{font-weight:600;margin-right:10px}
+  .warren{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start;background:#fff;border:1px solid var(--line);border-left:5px solid var(--jade);border-radius:12px;padding:18px 20px;margin-top:22px}
+  @media(max-width:800px){.warren{grid-template-columns:1fr}}
+  .warren h3{font-size:1.08rem;margin-bottom:6px;color:var(--jade)}
+  .warren ul{margin:4px 0 0 18px;color:var(--ink2);font-size:.95rem}
+  .warren li{margin:5px 0}
+  .warren .gallery{grid-template-columns:1fr;padding:0;gap:6px}
+  .datecard img{display:block;width:calc(100% + 40px);margin:-18px -20px 12px;aspect-ratio:16/7;object-fit:cover;border-radius:10px 10px 0 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark zh" href="index.html">中国</a>
+    <div class="links">
+      <a href="index.html">← Trip overview</a>
+      <a href="#plan">The Plan</a>
+      <a href="#ways">Two Ways In</a>
+      <a href="#days">Day by Day</a>
+      <a href="#pandas">Pandas</a>
+      <a href="#daytrips">Day Trips</a>
+      <a href="#costs">Costs</a>
+      <a class="pagelink" href="budget.html">Budget &amp; Timeline →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="photo" src="images/cd-leshan.jpg" alt="The Leshan Giant Buddha carved into the cliff above the river">
+  <div class="hero-text">
+    <span class="kicker">Week 3 · Warren &amp; Margot</span>
+    <h1>CHENGDU &amp; SICHUAN</h1>
+    <p class="sub">Pandas at breakfast, the world's largest stone Buddha, Bronze Age masks, face-changing opera and long teahouse afternoons.</p>
+    <div class="hero-badges">
+      <span class="badge">6 nights</span>
+      <span class="badge alt">Fly from Shanghai, or train from Xi'an</span>
+      <span class="badge gold">Built from Warren's list</span>
+    </div>
+  </div>
+  <span class="photo-credit" data-credit="cd-leshan">Photo: <a href="https://commons.wikimedia.org/wiki/File:36275-Leshan_(49067653383).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</span>
+</header>
+
+<!-- ============ THE PLAN ============ -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">成都</span><h2>Warren's dream trip, folded in</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Warren already had a China plan: Beijing, the bullet train southwest (maybe via Xi'an), then a week in Chengdu. Nearly all of it fits the family trip. The Beijing and Xi'an half is the shared fortnight, and his extra Beijing picks are now <a href="index.html#city-beijing">options on the main itinerary</a>. That leaves this page: <b>his Chengdu week, expanded</b>, with the logistics checked.</p>
+    <p class="lede">Chengdu is the capital of Sichuan: a big, green, famously unhurried city of teahouses, mahjong and the spiciest food in China, ringed by mountains full of pandas, Buddhas and Taoist temples.</p>
+    <div class="warren">
+      <div>
+        <h3>What changed from Warren's version</h3>
+        <ul>
+          <li><b>June instead of late July.</b> His dates (July 23 – Aug 6) put the Beijing days right on top of the PLA's 100th anniversary on Aug 1, 2027, when a parade could close central Beijing. They also land mid-way through Chinese summer vacation, and July is Chengdu's wettest month (9 inches of rain, against 5 in June).</li>
+          <li><b>His Beijing extras are on the main page:</b> <a href="index.html#city-beijing">Jinshanling</a> as a quieter Great Wall hike for anyone up for it, plus Panjiayuan Market, Shichahai and Sanlitun on the choose-your-own day.</li>
+          <li><b>Kept, with logistics checked:</b> Jinli, the Leshan Giant Buddha (weekday, with the boat), the panda base, People's Park and Heming Teahouse, Sichuan opera at Shufeng Yayun, and the nightlife.</li>
+          <li><b>Added:</b> Sanxingdui's bronze masks, the Dujiangyan waterworks with Taoist Mount Qingcheng, and an honest answer to "is the panda base a zoo?" (<a href="#pandas">below</a>).</li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <figure><img src="images/bj-jinshanling.jpg" alt="The Great Wall at Jinshanling" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Jinshanling" target="_blank" rel="noopener">Jinshanling (now a Day 3 option)</a></figcaption></figure>
+        <figure><img src="images/bj-panjiayuan.jpg" alt="Mao-era memorabilia at Panjiayuan Market" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Panjiayuan" target="_blank" rel="noopener">Panjiayuan Market (Day 5)</a></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO WAYS IN ============ -->
+<section id="ways" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">两条路</span><h2>Two ways in</h2></div>
+    <div class="rule"></div>
+    <div class="dates">
+      <div class="datecard" style="--c:var(--verm)"><img src="images/sh-bund.jpg" alt="" loading="lazy"><span class="tag">Option A · the default</span><h3>The whole fortnight, then fly</h3><ul>
+        <li class="y">Do all of Beijing, Xi'an, Nanjing, Suzhou and Shanghai with the family</li>
+        <li class="y">Day 16: fly Shanghai → Chengdu (about 3 hours) as everyone else flies home</li>
+        <li class="y">Days 16–22 in Sichuan, as laid out below; fly home from Chengdu</li>
+        <li class="m">Three weeks away in total</li>
+      </ul></div>
+      <div class="datecard" style="--c:var(--jade)"><img src="images/cd-train.jpg" alt="" loading="lazy"><span class="tag">Option B · Warren's train idea</span><h3>Peel off at Xi'an by bullet train</h3><ul>
+        <li class="y">Day 10: while the family heads east, take the train southwest through the Qinling Mountains (3–4 hours, about $40)</li>
+        <li class="y">Same six-night Chengdu week, home around Day 16 with everyone else: no extra week off</li>
+        <li class="y">Or stay on a few days for the Mount Emei overnight and a spare day</li>
+        <li class="n">Skips Nanjing, Suzhou and Shanghai</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY BY DAY ============ -->
+<section id="days">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">行程</span><h2>Day by day</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Numbered for Option A (Days 16–22); for Option B, read them as Days 10–16. The rhythm is Warren's: one big thing a day, then food, a park or a teahouse.</p>
+    <div class="city" id="city-chengdu">
+      <div class="city-banner">
+        <img class="photo" src="images/chengdu.jpg" alt="A young giant panda" loading="lazy">
+        <div class="city-title"><span class="zh">成都</span><h3>Chengdu</h3></div>
+        <span class="city-days">6 NIGHTS</span>
+        <span class="photo-credit" data-credit="chengdu">Photo: <a href="https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg" target="_blank" rel="noopener">George Lu</a> · CC BY 2.0</span>
+      </div>
+      <div class="gallery">
+        <figure><img src="images/cd-teahouse.jpg" alt="The teahouse in People's Park, Chengdu" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/People%27s_Park_(Chengdu)" target="_blank" rel="noopener">People's Park teahouse</a></figcaption></figure>
+        <figure><img src="images/cd-opera.jpg" alt="A Sichuan opera face-changer" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Bian_lian" target="_blank" rel="noopener">Face-changing opera</a></figcaption></figure>
+        <figure><img src="images/cd-jinli.jpg" alt="Jinli Ancient Street at night" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Jinli" target="_blank" rel="noopener">Jinli Ancient Street</a></figcaption></figure>
+        <figure><img src="images/cd-hotpot.jpg" alt="A split yuanyang hotpot" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Hot_pot" target="_blank" rel="noopener">Sichuan hotpot</a></figcaption></figure>
+      </div>
+      <div class="city-body">
+        <div>
+          <div class="day"><div class="dnum">16</div><div><h4>Arrive: Three Kingdoms and the first hotpot</h4><p>Fly in from Shanghai and check in near the center. Late afternoon at the <a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/wuhou_temple.htm" target="_blank" rel="noopener">Wuhou Shrine</a> (¥50), the temple to the heroes of the <a href="https://en.wikipedia.org/wiki/Romance_of_the_Three_Kingdoms" target="_blank" rel="noopener">Three Kingdoms</a>, all red walls and bamboo. Then out its side gate into <a href="https://en.wikipedia.org/wiki/Jinli" target="_blank" rel="noopener">Jinli Ancient Street</a> as the lanterns come on (Warren's pick). First hotpot: order the split <i>yuanyang</i> pot so there's a mild side.</p></div></div>
+          <div class="day"><div class="dnum">17</div><div><h4>Pandas at breakfast, opera at night</h4><p>The <a href="https://en.wikipedia.org/wiki/Chengdu_Research_Base_of_Giant_Panda_Breeding" target="_blank" rel="noopener">Giant Panda Base</a> at its 7:30 opening, when keepers bring breakfast and the pandas climb and tumble. By late morning they're mostly asleep. Tickets (¥55) are passport-booked online, up to 14 days ahead, with no walk-up sales. Then vegetarian lunch and tea at the working Buddhist <a href="https://en.wikipedia.org/wiki/Wenshu_Temple_(Chengdu)" target="_blank" rel="noopener">Wenshu Monastery</a>. Evening: <a href="https://en.wikipedia.org/wiki/Sichuan_opera" target="_blank" rel="noopener">Sichuan opera</a> at <b>Shufeng Yayun</b> in the Culture Park (Warren's pick): face-changing, fire-spitting, puppets and comic opera in 70–90 minutes, about ¥180–260 for good seats.</p></div></div>
+          <div class="day"><div class="dnum">18</div><div><h4>The Leshan Giant Buddha</h4><p>35–50 minutes by bullet train from Chengdu East, then a 10-minute shuttle. The <a href="https://en.wikipedia.org/wiki/Leshan_Giant_Buddha" target="_blank" rel="noopener">Giant Buddha</a> is 233 feet tall and 1,200 years old, carved into the cliff where three rivers meet (¥80). Go early on a weekday: the narrow cliff staircase down beside the Buddha's body can queue 2–3 hours at peak. The 40-minute river boat (~¥70, Warren's tip) gives the full-length view; afternoons are safer, since low morning water sometimes halts the boats. Back by evening, or continue an hour to <b>Mount Emei</b> for the night (see <a href="#daytrips">Day trips</a>).</p></div></div>
+          <div class="day"><div class="dnum">19</div><div><h4>Slow Chengdu</h4><p>The city at its own pace (Warren's pick): <a href="https://en.wikipedia.org/wiki/People%27s_Park_(Chengdu)" target="_blank" rel="noopener">People's Park</a> and its <b>Heming Teahouse</b>, with bamboo chairs, a bottomless gaiwan of jasmine tea for ¥18–35, and ear-cleaners with tuning forks (¥30–60; pay at the counter). Weekend mornings bring the dancers, singers and the parents' marriage market. Then the restored Qing lanes of <a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/wide-narrow-alley.htm" target="_blank" rel="noopener">Kuanzhai Xiangzi</a> and <a href="https://en.wikipedia.org/wiki/Taikoo_Li_Chengdu" target="_blank" rel="noopener">Taikoo Li</a>, wrapped around the Tang-era <a href="https://en.wikipedia.org/wiki/Daci_Temple" target="_blank" rel="noopener">Daci Temple</a>. Evening: Chengdu's famously easygoing nightlife, the scene that made it China's unofficial LGBTQ+ capital.</p></div></div>
+          <div class="day"><div class="dnum">20</div><div><h4>Sanxingdui: China's strangest Bronze Age</h4><p>20 minutes by train to Guanghan North, then a 15-minute taxi, to the <a href="https://en.wikipedia.org/wiki/Sanxingdui_Museum" target="_blank" rel="noopener">Sanxingdui Museum</a> (¥72): bug-eyed bronze masks, a 13-foot bronze tree and gold-foiled heads from a 3,000-year-old kingdom that left no writing. Allow 3–4 hours. Tickets are released five days ahead at 8pm and sell out, so book via Trip.com or Klook, and check whether it's closed that Monday. Back in town, the <a href="https://en.wikipedia.org/wiki/Jinsha_site" target="_blank" rel="noopener">Jinsha Site Museum</a> holds the same culture's golden Sun Bird disc (reportedly reopening after renovation in spring 2027; check).</p></div></div>
+          <div class="day"><div class="dnum">21</div><div><h4>Dujiangyan &amp; Mount Qingcheng</h4><p>A 25-minute train west to <a href="https://en.wikipedia.org/wiki/Dujiangyan" target="_blank" rel="noopener">Dujiangyan</a> (¥80), an irrigation system built in 256 BC that still waters the Chengdu plain. After lunch, 10 more minutes by train to <a href="https://en.wikipedia.org/wiki/Mount_Qingcheng" target="_blank" rel="noopener">Mount Qingcheng</a> (¥80, cable car ~¥35), one of the birthplaces of Taoism: forest paths, misty temples, a lake ferry. Rain-tolerant, which matters in June. Swap in <a href="#pandas">Panda Valley</a> next door if the city base felt too zoo-like. Farewell dinner: one more hotpot.</p></div></div>
+          <div class="day"><div class="dnum">22</div><div><h4>Home from Chengdu</h4><p>Most international flights use Tianfu airport (TFU), 45–60 minutes out on metro Line 18, though some are moving back to Shuangliu (CTU), so check the ticket. One-stop routings via Hong Kong, Seoul or Tokyo are plentiful.</p></div></div>
+          <div class="foodnote"><b>Eat:</b> hotpot · <i>chuan chuan</i> (skewers, paid by the stick) · mapo tofu (Chen Mapo Tofu is the 1862 original) · dan dan noodles · twice-cooked pork · Zhong dumplings · spicy rabbit head (dare) · <i>bingfen</i> jelly to cool down. Shu Daxia is a hotpot chain with English menus and a mild broth.</div>
+        </div>
+        <div>
+          <div class="citymap">
+            <div class="map" data-city="chengdu" role="region" aria-label="Map of Chengdu sights and day trips"></div>
+            <div class="map-tabs"></div>
+            <div class="cap">Pins show the day number · <span class="dotkey" style="--c:#C13B2A"></span> main sights &nbsp; <span class="dotkey" style="--c:#C99A3C"></span> food &amp; neighborhoods &nbsp; <span class="dotkey" style="--c:#2E6E62"></span> options</div>
+          </div>
+          <div class="foodnote jade"><b>Base:</b> a hotel near Chunxi Road or Taikoo Li: walkable to People's Park and the alleys, with metro lines to the panda base, Chengdu East station and the airport.</div>
+          <div class="foodnote jade"><b>June weather:</b> mid-80s °F and humid, often overcast (locals joke that Sichuan dogs bark at the sun), with rain on about half the days. That's still the driest of the summer months: July gets twice the rain.</div>
+          <div class="readup"><b>Read up</b> <a href="https://en.wikivoyage.org/wiki/Chengdu" target="_blank" rel="noopener">Wikivoyage</a><a href="https://www.travelchinaguide.com/cityguides/chengdu.htm" target="_blank" rel="noopener">Travel China Guide</a><a href="https://www.lonelyplanet.com/destinations/china/sichuan/chengdu" target="_blank" rel="noopener">Lonely Planet</a><a href="https://www.chinahighlights.com/chengdu/top-things-to-do.htm" target="_blank" rel="noopener">China Highlights</a></div>
+        </div>
+      </div>
+      <div class="gallery g3" style="padding-bottom:4px">
+        <figure><img src="images/cd-wenshu.jpg" alt="Wenshu Monastery" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Wenshu_Temple_(Chengdu)" target="_blank" rel="noopener">Wenshu Monastery</a></figcaption></figure>
+        <figure><img src="images/cd-kuanzhai.jpg" alt="Kuanzhai Xiangzi" loading="lazy"><figcaption><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/wide-narrow-alley.htm" target="_blank" rel="noopener">Kuanzhai Xiangzi</a></figcaption></figure>
+        <figure><img src="images/cd-sanxingdui.jpg" alt="A Sanxingdui bronze mask" loading="lazy"><figcaption><a href="https://en.wikipedia.org/wiki/Sanxingdui_Museum" target="_blank" rel="noopener">Sanxingdui bronzes</a></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PANDAS ============ -->
+<section id="pandas" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">熊猫</span><h2>Pandas: zoo or preserve?</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Warren's question was the right one. <b>Honest answer: the Chengdu base is a very good zoo, not a preserve.</b> It's a huge, landscaped park (its footprint more than doubled in 2021–23), and the newer hillside sections feel naturalistic. But the pandas live in enclosures, and it gets crowded after 10am. It is also a real breeding and research center, part of why wild numbers recovered. Nobody realistically sees a wild panda. If the zoo feel is a dealbreaker, two alternatives trade convenience for wildness:</p>
+    <div class="trips">
+      <div class="trip"><img src="images/cd-panda2.jpg" alt="A giant panda eating bamboo" loading="lazy"><div class="pad"><div class="meta">In the plan · 30–40 min from the center</div><h3>Chengdu Panda Base</h3><p>The big one, with 200+ pandas and red pandas. ¥55, passport-booked online (up to 14 days ahead, no walk-ups). Be there at the 7:30 opening for breakfast time; allow 3½–5 hours.</p><div class="links"><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/panda-breeding-and-research-center.htm" target="_blank" rel="noopener">Travel China Guide</a><a href="https://www.lonelyplanet.com/points-of-interest/giant-panda-breeding-research-base/472728" target="_blank" rel="noopener">Lonely Planet</a></div></div></div>
+      <div class="trip pick"><div class="pad"><div class="meta">Best low-effort swap · ~1 hr</div><h3>Dujiangyan Panda Valley</h3><p>Part of the wild-release training program: a dozen or so pandas in big hillside enclosures, with a fraction of the crowds. ¥55. It slots straight into Day 21, next to the Dujiangyan waterworks. (The separate Dujiangyan Panda Base, known for volunteer days, is reportedly closed for renovation.)</p><div class="links"><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/dujiangyan-panda-valley.htm" target="_blank" rel="noopener">Travel China Guide</a><a href="https://www.chinahighlights.com/chengdu/attraction/dujiangyan-panda-valley.htm" target="_blank" rel="noopener">China Highlights</a></div></div></div>
+      <div class="trip"><div class="pad"><div class="meta">Closest to wild · 2–2½ hrs by car</div><h3>Wolong Shenshuping</h3><p>A panda center inside the <a href="https://en.wikipedia.org/wiki/Wolong_National_Nature_Reserve" target="_blank" rel="noopener">Wolong Nature Reserve</a> at 5,600 feet: misty mountain forest, 70+ pandas and very few visitors (~¥85–90). It runs a capped volunteer program (cleaning, feeding; about ¥700–1,700, book weeks ahead, translator needed). A long day with a hired driver, or an overnight.</p><div class="links"><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/wolong.htm" target="_blank" rel="noopener">Travel China Guide</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY TRIPS ============ -->
+<section id="daytrips">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">周边</span><h2>Day trips &amp; swaps</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Chengdu sits on a flat, fertile plain ringed by mountains, so most of Sichuan's headline sights are an hour or less by train. The plan uses three; here's the menu for swaps, or for Option B's extra days. Several come from the <a href="https://chengdu-expat.com/day-trips-around-chengdu/" target="_blank" rel="noopener">guide Warren found</a>.</p>
+    <div class="trips">
+      <div class="trip"><img src="images/cd-emei.jpg" alt="The Golden Summit of Mount Emei" loading="lazy"><div class="pad"><div class="meta">Overnight add-on to Day 18</div><h3>Mount Emei</h3><p>One of Buddhism's four sacred mountains, an hour from Leshan: sleep at the foot, then cable car to the 10,000-foot Golden Summit and its gilded ten-headed Samantabhadra, ideally above a sea of clouds. Expect cheeky monkeys, and mist in June.</p><div class="links"><a href="https://en.wikipedia.org/wiki/Mount_Emei" target="_blank" rel="noopener">Wikipedia</a><a href="https://www.travelchinaguide.com/attraction/sichuan/leshan/mt_emei.htm" target="_blank" rel="noopener">Travel China Guide</a></div></div></div>
+      <div class="trip"><img src="images/cd-jinsha.jpg" alt="The Jinsha golden Sun Bird disc" loading="lazy"><div class="pad"><div class="meta">In town · half day</div><h3>Jinsha Site Museum</h3><p>The excavated capital of the culture that followed Sanxingdui, and home of the paper-thin golden Sun Bird disc that became China's cultural-heritage logo. Reportedly closed for upgrades until about May 2027, so check before planning on it.</p><div class="links"><a href="https://en.wikipedia.org/wiki/Jinsha_site" target="_blank" rel="noopener">Wikipedia</a><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/jinsha-site-museum.htm" target="_blank" rel="noopener">Travel China Guide</a></div></div></div>
+      <div class="trip"><img src="images/cd-qingcheng.jpg" alt="Jianfu Palace on Mount Qingcheng" loading="lazy"><div class="pad"><div class="meta">In the plan · Day 21</div><h3>Dujiangyan &amp; Mount Qingcheng</h3><p>The 2,300-year-old waterworks and the Taoist mountain, a joint UNESCO site, 25 minutes by train. A rain-tolerant day.</p><div class="links"><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/dujiangyan.htm" target="_blank" rel="noopener">Dujiangyan</a><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/mt_qingcheng.htm" target="_blank" rel="noopener">Qingcheng</a><a href="https://whc.unesco.org/en/list/1001" target="_blank" rel="noopener">UNESCO</a></div></div></div>
+      <div class="trip"><div class="pad"><div class="meta">Ancient town · 1–1½ hrs</div><h3>Huanglongxi</h3><p>A 1,700-year-old riverside town of flagstone lanes, teahouses and boat rides. It's much nicer on a weekday. <b>Luodai</b>, a Hakka town with Ming and Qing guild halls (about an hour), is the alternative.</p><div class="links"><a href="https://en.wikipedia.org/wiki/Huanglongxi" target="_blank" rel="noopener">Wikipedia</a><a href="https://www.travelchinaguide.com/attraction/sichuan/chengdu/huanglongxi-ancient-town.htm" target="_blank" rel="noopener">Travel China Guide</a></div></div></div>
+      <div class="trip"><div class="pad"><div class="meta">Warren's "flower village" · half day</div><h3>Sansheng Flower Town</h3><p>Farmland villages turned into a countryside escape inside the city limits: flower nurseries, courtyard restaurants, cafés and bike hire, by metro or taxi. An easy, low-key afternoon.</p></div></div>
+      <div class="trip"><div class="pad"><div class="meta">Hiking · 1½–2 hrs</div><h3>Mount Tiantai</h3><p>Waterfalls, forest trails and Taoist sites in the hills of Qionglai. Late April to early August is firefly season, so a June evening there is the real draw.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSTS ============ -->
+<section id="costs" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="zh">花费</span><h2>Rough costs</h2></div>
+    <div class="rule"></div>
+    <p class="lede">Per person, for two sharing a room, on top of the <a href="budget.html">shared fortnight</a>. Chengdu is one of China's cheaper big cities, and this week runs independent: a hotel, metro and DiDi, pre-booked tickets, and taxis or a hired driver for the day trips. Prices converted at ¥6.75 = $1.</p>
+    <div class="tablewrap"><table class="btable">
+      <tr><th>Item</th><th class="n">Option A</th><th class="n">Option B</th><th>Notes</th></tr>
+      <tr><td><b>Getting there</b></td><td class="n">$130–330</td><td class="n">~$40</td><td class="note">A: Shanghai → Chengdu flight, about 3 hours. B: Xi'an → Chengdu bullet train, 2nd class ¥263.</td></tr>
+      <tr><td><b>Flying home from Chengdu</b></td><td class="n">+$0–300</td><td class="n">+$0–300</td><td class="note">An open-jaw ticket instead of the group's Shanghai return. Often a wash; check when booking.</td></tr>
+      <tr><td><b>Hotel, 6 nights</b></td><td class="n">$300–400</td><td class="n">$300–400</td><td class="note">$100–130 per room-night for a good 4-star near Chunxi Road, split two ways.</td></tr>
+      <tr><td><b>Tickets &amp; shows</b></td><td class="n">~$115</td><td class="n">~$115</td><td class="note">Wuhou ¥50, pandas ¥55, opera ~¥200, Leshan ¥80 + boat ¥70, Sanxingdui ¥72, Dujiangyan ¥80, Qingcheng ¥80 + cable car ¥35, Heming tea and an ear-cleaning ~¥60.</td></tr>
+      <tr><td><b>Day-trip trains &amp; local transport</b></td><td class="n">~$80</td><td class="n">~$80</td><td class="note">Leshan, Guanghan and Dujiangyan trains (~¥250 total) plus metro and DiDi.</td></tr>
+      <tr><td><b>Food</b></td><td class="n">~$210</td><td class="n">~$210</td><td class="note">~$35 a day: hotpot is the splurge, and noodles and skewers cost almost nothing.</td></tr>
+      <tr><td><b>Cushion (20%)</b></td><td class="n">~$200</td><td class="n">~$150</td><td class="note">Same rule as the main budget.</td></tr>
+      <tr class="tot"><td>Total per person</td><td class="n">≈ $1,050–1,650</td><td class="n">≈ $900–1,300</td><td class="note">Option B also drops about $1,100 of each person's share of the Nanjing, Suzhou and Shanghai legs, though the rest of the group's share rises a little.</td></tr>
+    </table></div>
+    <p class="muted" style="font-size:.85rem;margin-top:10px">Optional extras: Mount Emei overnight (~$150–200 with hotel, tickets and cable car), a Wolong driver day (~$150–200 for the car), a panda volunteer day (~$100–250).</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="nextpage">
+      <div><h3>Back to the family trip</h3><p>The shared fortnight: Beijing, Xi'an, Nanjing, Suzhou and Shanghai.</p></div>
+      <a class="btn" href="index.html">← Trip overview</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><span class="zh">一路平安</span> · Built November 2026 from Warren's own China plan plus current research. Prices and opening rules, especially Sanxingdui's closed day and Jinsha's reopening, get re-checked in spring 2027.</p>
+    <p>Maps: <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</p>
+    <details><summary>Photo credits</summary>
+      <ul class="credits"><!-- credits:start --><li>Great Wall at Mutianyu: <a href="https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG" target="_blank" rel="noopener">Velatrix</a> · CC0</li><li>Forbidden City: <a href="https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg" target="_blank" rel="noopener">Pixelflake</a> · CC BY-SA 3.0</li><li>Terracotta Army: <a href="https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Sun Yat-sen Mausoleum: <a href="https://commons.wikimedia.org/wiki/File:Sun_Yat-sen_Mausoleum_-_54400198691.jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Humble Administrator&#x27;s Garden: <a href="https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_November_2017_008.jpg" target="_blank" rel="noopener">King of Hearts</a> · CC BY-SA 4.0</li><li>Shanghai skyline: <a href="https://commons.wikimedia.org/wiki/File:Shanghai_Lujiazui_night_skyline_2017_-_Flickr.jpg" target="_blank" rel="noopener">Larry Qian</a> · CC0</li><li>Leifeng Pagoda, West Lake: <a href="https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_%E9%9B%B7%E5%B3%B0%E5%A1%94_-_panoramio.jpg" target="_blank" rel="noopener">lienyuan lee</a> · CC BY 3.0</li><li>Giant panda: <a href="https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg" target="_blank" rel="noopener">George Lu</a> · CC BY 2.0</li><li>Temple of Heaven: <a href="https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests_03.jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Summer Palace: <a href="https://commons.wikimedia.org/wiki/File:Longevity_Hill_of_the_Summer_Palace.jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Beijing hutong: <a href="https://commons.wikimedia.org/wiki/File:Some_Hutong_in_Beijing_in_2026_-_1.jpg" target="_blank" rel="noopener">Renek78</a> · CC0</li><li>Forbidden City: <a href="https://commons.wikimedia.org/wiki/File:Hall_of_Supreme_Harmony_and_Mid_L-R_gates_(20241127120000).jpg" target="_blank" rel="noopener">N509FZ</a> · CC BY-SA 4.0</li><li>Xi&#x27;an city wall: <a href="https://commons.wikimedia.org/wiki/File:City_wall_of_Xi%27an_51550-Xian_(27959363326).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Big Wild Goose Pagoda: <a href="https://commons.wikimedia.org/wiki/File:Dayan_%22Big_Wild_Goose%22_Pagoda_(9911539764).jpg" target="_blank" rel="noopener">Gary Todd from Xinzheng, China</a> · CC0</li><li>Mount Hua: <a href="https://commons.wikimedia.org/wiki/File:Mount_Hua,_May,_2018-1.jpg" target="_blank" rel="noopener">Alexey Komarov</a> · CC BY-SA 4.0</li><li>Xi&#x27;an Bell Tower by night: <a href="https://commons.wikimedia.org/wiki/File:Xi%27an_Bell_Tower_at_night_1.jpg" target="_blank" rel="noopener">H2v5o68z</a> · CC0</li><li>Presidential Palace: <a href="https://commons.wikimedia.org/wiki/File:Main_gate_of_the_Presidential_Palace,_Nanjing_1.jpg" target="_blank" rel="noopener">钉钉</a> · CC BY-SA 4.0</li><li>Ming Xiaoling: <a href="https://commons.wikimedia.org/wiki/File:Ming_Xiaoling_Mausoleum_(54437036887).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Qinhuai River: <a href="https://commons.wikimedia.org/wiki/File:Qinhuai_River_Night.jpg" target="_blank" rel="noopener">SQFP</a> · CC BY 2.0</li><li>Master of the Nets Garden: <a href="https://commons.wikimedia.org/wiki/File:Master_of_the_Nets_Garden_Suzhou.jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Suzhou Museum: <a href="https://www.flickr.com/photos/75275041@N00/4711755586" target="_blank" rel="noopener">livepine</a> · CC BY 2.0</li><li>Suzhou canal: <a href="https://commons.wikimedia.org/wiki/File:Suzhou_canals_November_2017_007.jpg" target="_blank" rel="noopener">King of Hearts</a> · CC BY-SA 4.0</li><li>Yu Garden: <a href="https://commons.wikimedia.org/wiki/File:Shanghai_-_Yu_Garden_-_0035.jpg" target="_blank" rel="noopener">Stefan Fussan</a> · CC BY-SA 3.0</li><li>The Bund: <a href="https://commons.wikimedia.org/wiki/File:2015_The_Bund,_Shanghai-_Hong_Kong_and_Shanghai_Bank,_1923_(left)_%26_Customs_House,_1927_(right).jpg" target="_blank" rel="noopener">Gary Todd</a> · CC0</li><li>Shanghai Tower: <a href="https://commons.wikimedia.org/wiki/File:Shanghai_skyscrapers_5166285.jpg" target="_blank" rel="noopener">Ermell</a> · CC0</li><li>French Concession: <a href="https://commons.wikimedia.org/wiki/File:Wukang_Road_in_2025.jpg" target="_blank" rel="noopener">RunningTurtle8964</a> · CC BY 4.0</li><li>Lingyin Temple: <a href="https://commons.wikimedia.org/wiki/File:20090608_Hangzhou_Feilai_Feng_9060.jpg" target="_blank" rel="noopener">Jakub Hałun</a> · CC BY-SA 3.0</li><li>Longjing tea fields: <a href="https://commons.wikimedia.org/wiki/File:Tea_plantations_in_Longjing,_Hangzhou.jpg" target="_blank" rel="noopener">Wishva de Silva</a> · CC BY-SA 3.0</li><li>Sanxingdui bronze: <a href="https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_10.jpg" target="_blank" rel="noopener">Gary Todd</a> · CC0</li><li>Dujiangyan: <a href="https://commons.wikimedia.org/wiki/File:Dujiangyan_Scenic_Area_36666-Dujiangyan_(49067677318).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Leshan Giant Buddha: <a href="https://commons.wikimedia.org/wiki/File:36275-Leshan_(49067653383).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Jinli Ancient Street: <a href="https://commons.wikimedia.org/wiki/File:Chengdu_Jinli-Stra%C3%9Fe_bei_Nacht_1.jpg" target="_blank" rel="noopener">Zairon</a> · CC BY-SA 4.0</li><li>People&#x27;s Park teahouse: <a href="https://commons.wikimedia.org/wiki/File:Teahouse_in_Peoples_Park_-_Chengdu,_China_-_DSC05371.jpg" target="_blank" rel="noopener">Daderot</a> · CC0</li><li>Sichuan opera: <a href="https://commons.wikimedia.org/wiki/File:%E8%AE%8A%E8%87%89%E3%80%82%E3%80%82%E3%80%82.jpg" target="_blank" rel="noopener">曠野蝸牛</a> · CC BY 2.5</li><li>Mount Qingcheng: <a href="https://commons.wikimedia.org/wiki/File:Jianfu_Palace,_Mount_Qingcheng_(54530903712).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Wenshu Monastery: <a href="https://commons.wikimedia.org/wiki/File:Wenshu_Monastery_-_55393263967.jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 4.0</li><li>Kuanzhai Xiangzi: <a href="https://commons.wikimedia.org/wiki/File:Wide_and_Narrow_Alleys_(53691068061).jpg" target="_blank" rel="noopener">xiquinhosilva</a> · CC BY 2.0</li><li>Sichuan hotpot: <a href="https://commons.wikimedia.org/wiki/File:Yuanyang_Chongqing_Hotpot_Box_Hill.jpg" target="_blank" rel="noopener">Akira CA</a> · CC0</li><li>Giant panda: <a href="https://commons.wikimedia.org/wiki/File:Giant_panda_eating_bamboo.jpg" target="_blank" rel="noopener">Kevin Dooley</a> · CC BY 2.0</li><li>Mount Emei: <a href="https://commons.wikimedia.org/wiki/File:Golden_Summit_(Jinding)_(17264931860).jpg" target="_blank" rel="noopener">Min Zhou</a> · CC BY 2.0</li><li>Jinsha gold: <a href="https://commons.wikimedia.org/wiki/File:Jinsha_Gold_Sun-Bird_Disc_(13945570164).jpg" target="_blank" rel="noopener">Gary Todd from Xinzheng, China</a> · CC0</li><li>High-speed train: <a href="https://commons.wikimedia.org/wiki/File:CR400AF-2027@BJX_(20171103100132).jpg" target="_blank" rel="noopener">N509FZ</a> · CC BY-SA 4.0</li><li>Panjiayuan Market: <a href="https://www.flickr.com/photos/34427466141@N01/2288261" target="_blank" rel="noopener">Oldtasty</a> · CC BY-NC-SA 2.0</li><li>Jinshanling Great Wall: <a href="https://commons.wikimedia.org/wiki/File:%E9%87%91%E5%B1%B1%E5%B2%AD%E9%95%BF%E5%9F%8E_-_Jinshanling_Great_Wall_(7837756572).jpg" target="_blank" rel="noopener">Nikolaj Potanin from Russia</a> · CC BY-SA 2.0</li><!-- credits:end --></ul>
+    </details>
+  </div>
+</footer>
+</body>
+</html>

@@ -94,7 +94,7 @@ section.alt{background:var(--paper2);border-top:1px solid var(--line);border-bot
 .citypin .lbl small{display:block;font-size:10.5px;font-weight:700;color:var(--c);letter-spacing:.04em;text-transform:uppercase}
 .legtag{background:#fff;border:1px solid #E0CFA9;border-radius:9px;padding:1px 8px;font:700 12px 'Source Sans 3',sans-serif;color:var(--deepred);white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.12);pointer-events:none}
 .legtag-ext{color:var(--jade);border-color:#BFD5CF}
-.legtag-fly{color:#9C7420;border-color:#E4D3AC}
+.legtag-fly,.legtag-ext2rail{color:#9C7420;border-color:#E4D3AC}
 .legtag-plane{background:var(--deepred);color:#fff;border:none}
 .pop{font-family:'Source Sans 3',sans-serif;font-size:.86rem;line-height:1.4;color:var(--ink)}
 .pop b{display:block;font-family:'Playfair Display',serif;font-size:1rem;margin:1px 0 3px}
@@ -130,6 +130,8 @@ section.alt{background:var(--paper2);border-top:1px solid var(--line);border-bot
 .day .dnum{flex:0 0 46px;height:46px;border-radius:12px;background:var(--paper2);color:var(--deepred);font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;display:flex;align-items:center;justify-content:center}
 .day h4{font-size:1rem;margin-bottom:2px}
 .day p{font-size:.92rem;color:var(--ink2)}
+.day p.altnote{margin-top:7px;font-size:.86rem;background:var(--paper);border-radius:8px;padding:6px 10px}
+.day p.altnote b{color:var(--jade)}
 .citymap{background:var(--paper);border:1px solid #EADFC7;border-radius:14px;padding:8px}
 .foodnote{margin-top:14px;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.9rem;color:var(--ink2)}
 .foodnote b{color:var(--ink)}
@@ -228,6 +230,7 @@ section.alt{background:var(--paper2);border-top:1px solid var(--line);border-bot
 .btable tr.sub td{color:var(--ink2);font-size:.85rem}
 .btable tr.sub td:first-child{padding-left:33px}
 .btable tr.tot td{font-weight:900;background:var(--paper2);font-size:.98rem}
+.btable tr.tot td.note{font-weight:400;font-size:.84rem}
 .btable .note{color:var(--ink2);font-size:.82rem;font-weight:400}
 .conf{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:6px;padding:0 6px;white-space:nowrap}
 .conf.firm{background:#DCEBE6;color:var(--jade)}

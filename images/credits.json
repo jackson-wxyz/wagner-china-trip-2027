@@ -238,5 +238,117 @@
   "page": "https://commons.wikimedia.org/wiki/File:Dujiangyan_Scenic_Area_36666-Dujiangyan_(49067677318).jpg",
   "source": "commons",
   "title": "File:Dujiangyan Scenic Area 36666-Dujiangyan (49067677318).jpg"
+ },
+ "cd-leshan": {
+  "what": "Leshan Giant Buddha",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:36275-Leshan_(49067653383).jpg",
+  "source": "commons",
+  "title": "File:36275-Leshan (49067653383).jpg"
+ },
+ "cd-jinli": {
+  "what": "Jinli Ancient Street",
+  "author": "Zairon",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chengdu_Jinli-Stra%C3%9Fe_bei_Nacht_1.jpg",
+  "source": "commons",
+  "title": "File:Chengdu Jinli-Straße bei Nacht 1.jpg"
+ },
+ "cd-teahouse": {
+  "what": "People's Park teahouse",
+  "author": "Daderot",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Teahouse_in_Peoples_Park_-_Chengdu,_China_-_DSC05371.jpg",
+  "source": "commons",
+  "title": "File:Teahouse in Peoples Park - Chengdu, China - DSC05371.jpg"
+ },
+ "cd-opera": {
+  "what": "Sichuan opera",
+  "author": "曠野蝸牛",
+  "licence": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:%E8%AE%8A%E8%87%89%E3%80%82%E3%80%82%E3%80%82.jpg",
+  "source": "commons",
+  "title": "File:變臉。。。.jpg"
+ },
+ "cd-qingcheng": {
+  "what": "Mount Qingcheng",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jianfu_Palace,_Mount_Qingcheng_(54530903712).jpg",
+  "source": "commons",
+  "title": "File:Jianfu Palace, Mount Qingcheng (54530903712).jpg"
+ },
+ "cd-wenshu": {
+  "what": "Wenshu Monastery",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wenshu_Monastery_-_55393263967.jpg",
+  "source": "commons",
+  "title": "File:Wenshu Monastery - 55393263967.jpg"
+ },
+ "cd-kuanzhai": {
+  "what": "Kuanzhai Xiangzi",
+  "author": "xiquinhosilva",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wide_and_Narrow_Alleys_(53691068061).jpg",
+  "source": "commons",
+  "title": "File:Wide and Narrow Alleys (53691068061).jpg"
+ },
+ "cd-hotpot": {
+  "what": "Sichuan hotpot",
+  "author": "Akira CA",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Yuanyang_Chongqing_Hotpot_Box_Hill.jpg",
+  "source": "commons",
+  "title": "File:Yuanyang Chongqing Hotpot Box Hill.jpg"
+ },
+ "cd-panda2": {
+  "what": "Giant panda",
+  "author": "Kevin Dooley",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Giant_panda_eating_bamboo.jpg",
+  "source": "commons",
+  "title": "File:Giant panda eating bamboo.jpg"
+ },
+ "cd-emei": {
+  "what": "Mount Emei",
+  "author": "Min Zhou",
+  "licence": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Golden_Summit_(Jinding)_(17264931860).jpg",
+  "source": "commons",
+  "title": "File:Golden Summit (Jinding) (17264931860).jpg"
+ },
+ "cd-jinsha": {
+  "what": "Jinsha gold",
+  "author": "Gary Todd from Xinzheng, China",
+  "licence": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jinsha_Gold_Sun-Bird_Disc_(13945570164).jpg",
+  "source": "commons",
+  "title": "File:Jinsha Gold Sun-Bird Disc (13945570164).jpg"
+ },
+ "cd-train": {
+  "what": "High-speed train",
+  "author": "N509FZ",
+  "licence": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:CR400AF-2027@BJX_(20171103100132).jpg",
+  "source": "commons",
+  "title": "File:CR400AF-2027@BJX (20171103100132).jpg"
+ },
+ "bj-panjiayuan": {
+  "what": "Panjiayuan Market",
+  "author": "Oldtasty",
+  "licence": "CC BY-NC-SA 2.0",
+  "page": "https://www.flickr.com/photos/34427466141@N01/2288261",
+  "source": "openverse/flickr",
+  "title": "Panjiayuan Market, Beijing"
+ },
+ "bj-jinshanling": {
+  "what": "Jinshanling Great Wall",
+  "author": "Nikolaj Potanin from Russia",
+  "licence": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E5%B1%B1%E5%B2%AD%E9%95%BF%E5%9F%8E_-_Jinshanling_Great_Wall_(7837756572).jpg",
+  "source": "commons",
+  "title": "File:金山岭长城 - Jinshanling Great Wall (7837756572).jpg"
  }
 }

@@ -93,5 +93,48 @@
  },
  "cd-dujiangyan": {
   "idx": 10
+ },
+ "cd-leshan": {
+  "idx": 0,
+  "y": 0.38
+ },
+ "cd-jinli": {
+  "idx": 4
+ },
+ "cd-teahouse": {
+  "idx": 1
+ },
+ "cd-opera": {
+  "idx": 6
+ },
+ "cd-qingcheng": {
+  "idx": 2
+ },
+ "cd-wenshu": {
+  "idx": 4
+ },
+ "cd-kuanzhai": {
+  "idx": 6
+ },
+ "cd-hotpot": {
+  "idx": 7
+ },
+ "cd-panda2": {
+  "idx": 4
+ },
+ "cd-emei": {
+  "idx": 2
+ },
+ "cd-jinsha": {
+  "idx": 2
+ },
+ "cd-train": {
+  "idx": 0
+ },
+ "bj-panjiayuan": {
+  "idx": 4
+ },
+ "bj-jinshanling": {
+  "idx": 6
  }
 }
